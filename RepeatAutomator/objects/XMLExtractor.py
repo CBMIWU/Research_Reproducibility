@@ -15,14 +15,19 @@ class XMLExtractor(DatabaseManager):
 	Depends on imported modules:
 		requests		-- http://docs.python-requests.org/en/master/
 		beautiful soup	-- https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+		os				-- https://docs.python.org/3/library/os.html
+		sys				-- https://docs.python.org/3/library/sys.html
+		re				-- https://docs.python.org/3/library/re.html
+	Inherited methods from DatabaseManager:
+		record_error
 	See documentation for more information
 	"""
 
-	def xml_load(self,site : 'string - url where xml data lives') -> 'bs4.BeautifulSoup':
+	def xml_load(self,site):
 		"""
-		Get xml data on an article
-		Args: url address (string)
-		Return: BeautifulSoup of xml data
+		Get xml data on an article, record error in the sql database if http request fails
+		Args: site -- url address where xml data lives (string)
+		Return: bs4.BeautifulSoup object, BeautifulSoup of xml data
 				0 to indicate an error occurred
 
 		Example:
@@ -40,7 +45,7 @@ class XMLExtractor(DatabaseManager):
 		        </datecreated>
 		        ...
 
-		Requests manages error handling
+		Requests module manages error handling
 		>>> xe.xml_load("this is not a valid url")
 		request to site: 'this is not a valid url'
 		failed. error information from requests:
@@ -65,46 +70,51 @@ class XMLExtractor(DatabaseManager):
 			return 0
 		return data
 
-	def parse_xml(self,xml : 'string - xml formatted string') -> 'bs4.BeautifulSoup':
+	def parse_xml(self,xml):
 		"""
 		Parse an xml string
-		Args: string to be parsed
-		Return: BeautifulSoup of xml data
+		Args: xml -- xml formatted string to be parsed (string)
+		Return: bs4.BeautifulSoup object, BeautifulSoup of xml data
 				0 to indicate an error occurred
+		Called by xml_load to parse xml from the ncbi website
 
 		Example:
 		>>> xe = XMLExtractor()
-		>>> bs = xe.parse_xml("<ImportantInformation><BestDinosaur>triceratops</BestDinosaur><BestCountry>Ireland</BestCountry></ImportantInformation>")
-		>>> bs
-		<html><body><importantinformation><bestdinosaur>triceratops</bestdinosaur><bestcountry>Ireland</bestcountry></importantinformation></body></html>
-		>>> bs.importantinformation
-		<importantinformation><bestdinosaur>triceratops</bestdinosaur><bestcountry>Ireland</bestcountry></importantinformation>
-		>>> bs.bestdinosaur
-		<bestdinosaur>triceratops</bestdinosaur>
-		>>> bs.bestdinosaur.text
-		triceratops
+		>>> bs = xe.parse_xml("<PubmedArticle><MedlineCitation Owner="NLM" Status="MEDLINE"><PMID Version="1">24433938</PMID><DateCreated><Year>2014</Year> ...")
+		#from article: pubmed id: 24433938 -- see http://www.ncbi.nlm.nih.gov/pubmed/24433938?report=xml&format=text
+		>>> bs.articletitle
+		<ArticleTitle>Differences between intentional and non-intentional burns in India: implications for prevention.</ArticleTitle>
+		>>> bs.articletitle.text
+		'Differences between intentional and non-intentional burns in India: implications for prevention.'
+		>>> bs.forename.text
+		'Mangai'
 
+		Throws error if:
+			input is wrong type (not string)
+			improperly formatted (not from ncbi site), check that pubmedarticle tag is in BeautifulSoup to verify
 		>>> xe.parse_xml(12)
 		parse_xml called on: '12'
 		invalid type, arg must be type string but is: <class 'int'>
 
-		BeautifulSoup will never throw an error as long as the argument is a string.
-		Check that pubmedarticle tag is in BeautifulSoup to verify that parse was successful
+		>>> bs = xe.parse_xml("<ImportantInformation><BestDinosaur>triceratops</BestDinosaur><BestCountry>Ireland</BestCountry></ImportantInformation>")
+		xml was not proper format (no 'pubmedarticle' tag found). likely, the wrong (but valid) website was entered"
+
+		As far as I can tell, BeautifulSoup wont throw an error as long as the argument is a string.
 		"""
 		if (type(xml) is not str):
 			print("parse_xml called on: '{}'\n invalid type, arg must be type string but is: {}".format(xml,type(xml)))
 			return 0
 		data = BeautifulSoup(xml,'lxml')
 		if (not data.pubmedarticle):
-			e = "xml was not proper format (no 'pubmedarticle' tag found). likely, the wrong website was entered"
+			e = "xml was not proper format (no 'pubmedarticle' tag found). likely, the wrong (but valid) website was entered"
 			print(e)
 			return e
 		return data
 
-	def xml_extract(self,bs : 'BeautifulSoup - xml data from ncbi site'):
+	def xml_extract(self,bs):
 		"""
 		Extract redcap fields from the BeautifulSoup object
-		Args: BeautifulSoup of xml from ncbi site
+		Args: bs -- xml data from ncbi site (bs4.BeautifulSoup object)
 		Return: dictionary of redcap data
 				empty dictionary if errors occur
 
@@ -150,7 +160,7 @@ class XMLExtractor(DatabaseManager):
 		doi = self.try_xml(bs,("elocationid",{"eidtype":"doi"}))
 		articleTitle = self.try_xml(bs,'articletitle')
 
-		#redcap only allows alpha characters for first and last name. sub out invalid characters
+		#redcap only allows alpha characters for first and last name. sub out some common invalid characters
 		lastName = re.sub('[\W_\s]','',self.try_xml(bs,"lastname"))
 		firstName = re.sub('[\W_\s]','',self.try_xml(bs,'forename'))
 
@@ -180,13 +190,16 @@ class XMLExtractor(DatabaseManager):
 			'article_title':articleTitle,
 			})
 
-	def try_xml(self, bs : 'BeautifulSoup data', search : 'string or tuple, argument in BeautifulSoup.find method call') -> 'string':
+	def try_xml(self, bs, search):
 		"""
-		Handle errors that occur when tags arent found in BeautifulSoup
-		Args: BeautifulSoup of xml from ncbi site
-				search information
+		Handle errors that occur when tags arent found in BeautifulSoup so script doesnt Force-quit when a field isnt found
+		Args:
+			bs 		-- xml data from ncbi site (bs4.BeautifulSoup object)
+			search 	-- string or tuple, argument in BeautifulSoup.find method call
 		Return: data in form of string
 				empty string if nothing found
+		Called by xml_extractor
+
 		Example:
 		>>> xe = XMLExtractor()
 		>>> bs = BeautifulSoup("<ImportantInformation><BestDinosaur>triceratops</BestDinosaur><BestCountry>Ireland</BestCountry></ImportantInformation>",'lxml')
@@ -194,6 +207,9 @@ class XMLExtractor(DatabaseManager):
 		'Ireland'
 		>>> xe.try_xml(bs,madonna)
 		''
+		>>> bs = BeautifulSoup("<article-id pub-id-type='doi'>10.1016/j.annemergmed.2013.08.019</article-id>")
+		>>> xe.try_xml(bs,('article-id',{'pub-id-type':'doi'}))
+		10.1016/j.annemergmed.2013.08.019
 		"""
 		try:
 			return bs.find(search).text

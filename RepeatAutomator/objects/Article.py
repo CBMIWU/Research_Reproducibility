@@ -4,7 +4,7 @@
 import requests
 from ArticleExtractor import ArticleExtractor
 from XMLExtractor import XMLExtractor
-from bs4 import BeautifulSoup
+import bs4
 import re,sys
 import textract, nltk
 
@@ -13,7 +13,7 @@ class RawArticle(object):
 		self.text = self.get_text(file)
 
 
-	def get_text(self,file):		#TODO, clean up or remove proper nouns
+	def get_text(self,file):
 		if (not re.search(r'.pdf',file)):
 			file = file + ".pdf"
 		try:
@@ -26,36 +26,19 @@ class RawArticle(object):
 			print("file: {} not found\ninformation from textract:\n\t{}".format(file,e))
 			return 0
 
-			#TODO
-		"""
-		words = nltk.word_tokenize(text.decode('utf-8'))
-		tagged = nltk.pos_tag(words)
-		newwords = []
-		print len(tagged)
-		for word,part in tagged:
-			if (re.search(r'NNP.?',part)):
-				newwords.append(re.sub(r'\.','',word))
-			else:
-				newwords.append(word)
-		text = ' '.join([word for word in newwords])
-		text = re.sub(r'\s\.','.',text)
-		print text
-		sys.exit()
-		"""
-		#self.sents = re.split(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s',text)
-
 class XMLArticle(ArticleExtractor,XMLExtractor):
-
-	#TODO, fix here and others so that metadata has default if none provided
-	def __init__(self,xmltext,run_style,article_id,identifier,**metadata):
-		self.indi = run_style
-		self.entry = {}
-		if ('metadata' in metadata):
-			super(XMLArticle,self).__init__(run_style=run_style,metadata=metadata['metadata'])
+	def __init__(self,article_id,identifier,**kwargs):
+		assert ('xmltext' in kwargs) or ('bs' in kwargs),"XMLArticle constructor called without xmltext or bs keyword argument (must have at least one)"
+		if ('bs' in kwargs):
+			assert isinstance(kwargs['bs'],bs4.element.Tag),"XMLArticle constructor called and bs kwarg was invalid type - should be type 'BeautifulSoup Tag' but is type: {}".format(type(kwargs['bs']))
+			self.bs = kwargs['bs']
 		else:
-			super(XMLArticle,self).__init__(run_style=run_style)
-		self.fulltext = xmltext
-		self.bs = BeautifulSoup(self.fulltext,"lxml")
+			self.bs = bs4.BeautifulSoup(kwargs['xmltext'],"lxml")
+		kwargs.pop('bs',0)			#remove bs and xmltext from kwargs so that ArticleManager constructor
+		kwargs.pop('xmltext',0)		#doesnt throw an error when called with invalid argments
+
+		self.entry = {}
+		super(XMLArticle,self).__init__(**kwargs) 	#pass run_style and metadata keyword argument on to ArticleExtractor constructor (if provided)
 		self.article_id = article_id
 		self.identifier = identifier
 
@@ -63,7 +46,7 @@ class XMLArticle(ArticleExtractor,XMLExtractor):
 		try:
 			return bs.find(("article-id",{"pub-id-type":"pmid"})).text
 		except AttributeError as e:
-			#field not found
+			#pubmed id not found
 			return ""
 
 	def section(self,sections,tag):
@@ -79,6 +62,7 @@ class XMLArticle(ArticleExtractor,XMLExtractor):
 			return self.bs
 
 	def search(self,regex):
+		#return self._get_funding(self.search(re.compile(r'funded.*?by',re.I)).get_text())
 		try:
 			return self.bs.find(text=regex).parent.parent
 		except AttributeError:
@@ -89,68 +73,44 @@ class XMLArticle(ArticleExtractor,XMLExtractor):
 			return 0
 
 	def xml_section(self,*titles):
-		body = self.bs.body
 		for title in titles:
-			if (body.find("sec",{"sec-type":title})):
-				return body.find("sec",{"sec-type":title}).text
-			if (body.find("title",text=title)):
-				return body.find("title",text=re.compile(title,re.I)).parent.text
-		return self.bs.body		#unable to find section
+			if (self.bs.find("sec",{"sec-type":title})):
+				return self.bs.find("sec",{"sec-type":title}).text
+			if (self.bs.find("title",text=title)):
+				return self.bs.find("title",text=re.compile(title,re.I)).parent.text
+		return self.bs.text
 
-	#TODO, if xml_section doesnt find choice, use a search instead of entire body
 	def get_hypotheses(self):
 		return self._get_hypotheses(self.xml_section('background','introduction'))
 
-	def get_funding(self):		#nltk could improve; low priority now though
-		#self.bs.find_all(string=re.compile(r'fund[ie]'))
-		return self._get_funding(self.search(re.compile(r'funded.*?by',re.I)).get_text())
+	def get_funding(self):
+		return self._get_funding(self.bs.text)
 
-	def get_inex_criteria(self):	#TODO, expand
+	def get_inex_criteria(self):
 		return self._get_inex_criteria(self.xml_section('methods'))
-
-	def get_ontol_vocab(self): #TODO, if ontol occurs outside of inclusion / exclusion
-		return	#TODO
-		return self._get_ontol_vocab(self.xml_section('methods'))
 
 	def get_databases(self):
 		return self._get_databases(self.xml_section('methods'))
 
 	def get_query(self):
-		return #TODO
-		return self._get_query(self.fulltext)
-		self.entry['query_script_shared'] = 0
+		return self._get_query(self.xml_section('methods'))
 
 	def get_nlp(self):
 		return self._get_nlp(self.xml_section('methods'))
 
-	def get_analysis(self):
-		return #TODO
-		return self._get_analysis(text)
+	def get_analysis(self,classifier):
+		return self._get_analysis(classifier.classify(self.xml_section('methods')))
 
 	def get_stats(self):
-		return #TODO
-		return self._get_stats(text)
+		return self._get_stats(self.xml_section('methods'))
 
 	def get_limitations(self):
 		return self._get_limitations(self.xml_section('discussion','conclusion'))
 
-	def get_primary_research(self):
-		return #TODO
-		return self._get_primary_research(text)
-		#TODO, run machine learning algorithm on text
-
-	def get_clear_analysis(self):
-		return #TODO
-		return self._get_clear_analysis(text)
-		#TODO, run machine learning algorithm on text
-
-	def get_institution(self,institution):
-		return #TODO
-		return self._get_institution(institution)
+	def get_institution(self,affiliation):
+		return self._get_institution(affiliation)
 
 class PDFArticle(ArticleExtractor,XMLExtractor):
-	#kwargs: metadata and run_style
-	#TODO, change if this works
 	def __init__(self,file,article_id,identifier,**kwargs):
 		self.entry = {}
 		super(PDFArticle,self).__init__(**kwargs)
@@ -169,23 +129,17 @@ class PDFArticle(ArticleExtractor,XMLExtractor):
 	def get_hypotheses(self):
 		return self._get_hypotheses(self.text)
 
-	def get_funding(self):		#nltk could improve; low priority now though
-		#self.bs.find_all(string=re.compile(r'fund[ie]'))
+	def get_funding(self):
 		return self._get_funding(self.text)
 
-	def get_inex_criteria(self):	#TODO, expand
+	def get_inex_criteria(self):
 		return self._get_inex_criteria(self.text)
-
-	def get_ontol_vocab(self): #TODO, if ontol occurs outside of inclusion / exclusion
-		return #TODO
-		return self._get_ontol_vocab(self.text)
 
 	def get_databases(self):
 		return self._get_databases(self.text)
 
 	def get_query(self):
 		return self._get_query(self.text)
-		self.entry['query_script_shared'] = 0
 
 	def get_nlp(self):
 		return self._get_nlp(self.text)
@@ -196,18 +150,9 @@ class PDFArticle(ArticleExtractor,XMLExtractor):
 	def get_limitations(self):
 		return self._get_limitations(self.text)
 
-	def get_primary_research(self):
-		return self._get_primary_research(self.text)
-		#TODO, run machine learning algorithm on text
-
-
 	def get_analysis(self):
-		return
+		return #TODO, run machine learning
 		return self._get_analysis(self.text)
-	def get_clear_analysis(self):
-		return
-		return self._get_clear_analysis(self.text)
-		#TODO, run machine learning algorithm on text
 
-	def get_institution(self,institution):
-		return self._get_institution(institution)
+	def get_institution(self,affiliation):
+		return self._get_institution(affiliation)
