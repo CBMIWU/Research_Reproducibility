@@ -34,7 +34,7 @@
 ##Video Tutorials:
 1. [Intro](https://youtu.be/q51gf0Np13A)
 2. [DatabaseManager](https://youtu.be/FtmEwFQFKNw)
-3. [XMLExtractor](https://www.youtube.com/watch?v=d5v4LsMz99A)
+3. [XMLExtractor](https://youtu.be/8g8sm3bF9xQ)
 4. [ArticleManager](https://youtu.be/yl_UFhkU6ew)
 5. [ArticleExtractor](https://youtu.be/tUFG0Ys4x8c)
 6. [Article](https://youtu.be/8g8sm3bF9xQ)
