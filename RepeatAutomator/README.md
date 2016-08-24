@@ -1,18 +1,15 @@
 # Research_Reproducibility Tool
 
-##Authors:
-John Christian Lukas -- clukas812@gmail.com
-
 ##Objects:
 * DatabaseManager -- query redcap and enter errors into a sql database
 * XMLExtractor -- extract data from the xml version of the pubmed site for an article
-* ArticleManager -- handle user interaction and enter data into redcap database
+* ArticleManager -- handles user interaction and enter data into redcap database
 * ArticleExtractor -- extract data from the text of an article
 * Article -- PDFArticle and XMLArticle classes depending what type of article is extracted
 
 ##Management:
 * query_redcap -- manage DatabaseManager methods
-* executer -- manage extraction of data for PDFArticle and XMLArticle
+* executer -- manages extraction of data for PDFArticle and XMLArticle
 
 ##Dependencies:
 	os				-- https://docs.python.org/3/library/os.html
@@ -35,15 +32,22 @@ John Christian Lukas -- clukas812@gmail.com
 	time			-- https://docs.python.org/3.0/library/time.html
 	
 ##Video Tutorials:
-1. [Intro](https://www.youtube.com/watch?v=byCT6yb_9lA)
-2. [DatabaseManager](https://www.youtube.com/watch?v=FSD5t8SCNZQ)
+1. [Intro](https://youtu.be/q51gf0Np13A)
+2. [DatabaseManager](https://youtu.be/FtmEwFQFKNw)
 3. [XMLExtractor](https://www.youtube.com/watch?v=d5v4LsMz99A)
-4. [ArticleManager](https://www.youtube.com/watch?v=J6kvrPczfMU)
-5. [ArticleExtractor](https://www.youtube.com/watch?v=sV7jGREY-GQ)
-6. [Article](https://www.youtube.com/watch?v=iPUkUB-8Hzc)
-7. [executer and query_redcap](https://www.youtube.com/watch?v=EznR-Sdf6Uc)
+4. [ArticleManager](https://youtu.be/yl_UFhkU6ew)
+5. [ArticleExtractor](https://youtu.be/tUFG0Ys4x8c)
+6. [Article](https://youtu.be/8g8sm3bF9xQ)
+7. [executer and query_redcap](https://youtu.be/oiuITs0HTpQ)
 
 All commands available in: otherthings/Commands text document
+
+##Authors:
+Leslie McIntosh
+Cynthia Hudson Vitale
+Anthony Juehne
+John Christian Lukas (lead developer) -- clukas812@gmail.com*
+
 
 ##Future Directions:
 * Expand to extract more fields (see otherthings/fields_status.xlsx for information on currently supported fields and extraction methods for those fields); Steps:
