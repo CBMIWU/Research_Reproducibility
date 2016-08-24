@@ -43,10 +43,10 @@
 All commands available in: otherthings/Commands text document
 
 ##Authors:
-Leslie McIntosh
-Cynthia Hudson Vitale
-Anthony Juehne
-John Christian Lukas (lead developer) -- clukas812@gmail.com*
+* Leslie McIntosh
+* Cynthia Hudson Vitale
+* Anthony Juehne
+* John Christian Lukas (lead developer) -- clukas812@gmail.com*
 
 
 ##Future Directions:
