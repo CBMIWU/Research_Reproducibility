@@ -37,7 +37,6 @@ class Trainer(object):
 			#allwords.extend([word for word in nltk.word_tokenize(xmltext.text) if word not in nltk.corpus.stopwords.words('english')])
 			#example of how Trainer could be used on xml articles
 
-		allwords = list(set(allwords))
 		return allwords
 
 	def train(self,redcap,ml_data):
@@ -55,7 +54,7 @@ class Trainer(object):
 			#example of how Trainer could be applied to xml articles
 
 
-			numwords = len(self.allwords)
+			numwords = len(list(set(self.allwords)))
 			usewords = sorted(list(set(self.allwords)),key=self.allwords.count,reverse=True)[:int(numwords/1.5)]
 			try:
 				featuresset.append(({word: 1 if re.search(re.escape(word),art.text) else 0 for word in usewords},ml_data[str(pubmed[each_article]['record'])]))
