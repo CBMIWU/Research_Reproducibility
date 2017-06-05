@@ -40,7 +40,7 @@ class ArticleManager(DatabaseManager):
 		self.metadata = self.verify_meta(metadata)
 		self.entry = {}
 
-	def verify_meta(self,metadata : 'list of dictionaries'):
+	def verify_meta(self,metadata):
 		"""
 		Affirm that metadata follows the proper format
 			a metadata is:
@@ -513,11 +513,11 @@ class ArticleManager(DatabaseManager):
 				#found open access article
 				yield (ass,article_id)
 				if (len(search_ids == 0)):
-					return 0	#all articles found
+					return #all articles found
 		if (len(search_ids)>0):
 			print("some articles were not found:\n{}".format(search_ids))
-			return -1	#articles not found
-		return 0 		#all articles found
+			return #articles not found
+		return #all articles found
 
 	def enter_redcap(self,entry,record_id):
 		"""
