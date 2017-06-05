@@ -25,7 +25,7 @@ in with pinned_pkgs; python2Packages.buildPythonApplication rec {
   meta = with stdenv.lib; {
     homepage = https://github.com/CBMIWU/Research_Reproducibility;
     description = "A tool for analyzing the reproducibility of EMR studies";
-    license = stdenv.lib.licenses.apache2;
+    license = stdenv.lib.licenses.asl20;
     platforms = stdenv.lib.platforms.unix;
     maintainers = [ stdenv.lib.maintainers.siddharthist ];
   };
