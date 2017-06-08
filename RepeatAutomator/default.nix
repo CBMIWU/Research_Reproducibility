@@ -8,18 +8,22 @@ let
     rev    = "17.03";
     sha256 = "1fw9ryrz1qzbaxnjqqf91yxk1pb9hgci0z0pzw53f675almmv9q2";
   }) {};
-in with pinned_pkgs; python2Packages.buildPythonApplication rec {
+in with pinned_pkgs; python3Packages.buildPythonApplication rec {
   name = "repeat-automator";
 
   src = "./.";
 
   nativeBuildInputs = [
-    python2Packages.setuptools # not currently used, but should be
+    python3Packages.setuptools # not currently used, but should be
   ];
 
-  propagatedBuildInputs = with python2Packages; [
-    beautifulsoup
+  propagatedBuildInputs = with python3Packages; [
+    beautifulsoup4
+    lxml
+    # nltk
     pycurl
+    requests2
+    tkinter
   ];
 
   meta = with stdenv.lib; {

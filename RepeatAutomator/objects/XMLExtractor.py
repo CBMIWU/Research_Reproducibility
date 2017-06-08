@@ -56,9 +56,9 @@ class XMLExtractor(DatabaseManager):
 		try:
 			xml_text = requests.get(site).text
 		except Exception as e:
-			self.record_error(method='xml_load',object_caller='XMLExtractor',field=site,notes=str(e))
 			print("request to site: '{}'\nfailed. error information from requests:".format(site))
 			print("\t",e)
+			self.record_error(method='xml_load',object_caller='XMLExtractor',field=site,notes=str(e))
 			return 0
 		xml_text = re.sub(r'&lt;',"<",xml_text)
 		xml_text = re.sub(r'&gt;',">",xml_text)
