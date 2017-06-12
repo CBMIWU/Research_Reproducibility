@@ -1,3 +1,13 @@
 language: nix
-install: cd RepeatAutomator/; travis_wait nix-shell
+
+install:
+  - cd RepeatAutomator/
+  - travis_wait nix-shell
+  - python -m nltk.downloader -d /tmp/nltk_data all
+  - travis_wait export NLTK_DATA=/tmp/nltk_data
+
+cache:
+  directories:
+    - /tmp/nltk_data/
+
 script: cd RepeatAutomator/objects; nix-shell --run "bash test.sh"
