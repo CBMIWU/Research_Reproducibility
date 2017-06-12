@@ -1,22 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import os
-import sys
-import re
-sys.path.append(
-    "{0}/Desktop/cbmi/reproduce/python/MedicalResearchTool/objects".format(os.environ['HOME']))  # TODO
-sys.path.append(
-    "{0}/Desktop/cbmi/reproduce/python/MedicalResearchTool".format(os.environ['HOME']))
-
-import nltk
-import requests
-from pprint import pprint
-from stemming.porter2 import stem
 from ArticleManager import ArticleManager
 from DatabaseManager import DatabaseManager
 from bs4 import BeautifulSoup
-
+from pprint import pprint
+from stemming.porter2 import stem
+import nltk
+import os
+import pwd
+import re
+import requests
+import sys
 
 class ArticleExtractor(ArticleManager):
 
@@ -120,8 +115,11 @@ class ArticleExtractor(ArticleManager):
         >>> ae.entry
         {'reviewer':'Elvis'}
         """
-        username = os.getlogin() or pwd.getpwuid(
-            os.getuid())[0]  # username of the person using the computer
+        username = ""
+        try:
+            username = os.getlogin()
+        except FileNotFoundError:
+            username = pwd.getpwuid(os.getuid())[0]  # username of the person using the computer
         users = self.get_choices("reviewer")
         for user in users:
             if (re.search(username, user, re.I)):
