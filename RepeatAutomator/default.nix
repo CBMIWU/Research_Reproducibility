@@ -2,16 +2,20 @@
 
 let
   # Pin a nixpkgs version
+  # We need later than 17.03 for nltk
   pinned_pkgs = import (pkgs.fetchFromGitHub {
     owner  = "NixOS";
     repo   = "nixpkgs";
-    rev    = "17.03";
-    sha256 = "1fw9ryrz1qzbaxnjqqf91yxk1pb9hgci0z0pzw53f675almmv9q2";
+    rev    = "b615c2e9929e840e95408b511db7f03dbdd71143";
+    sha256 = "17dvjb5k8mrcp9fv3nhzwpj7x70j7mhdq7yb3k8wll19s8sfhb1x";
   }) {};
+
+  stemming = pinned_pkgs.callPackage ./nix/stemming.nix { };
+  # textract = pinned_pkgs.callPackage ./nix/textract.nix { };
 in with pinned_pkgs; python3Packages.buildPythonApplication rec {
   name = "repeat-automator";
 
-  src = "./.";
+  src = ./.;
 
   nativeBuildInputs = [
     python3Packages.setuptools # not currently used, but should be
@@ -20,9 +24,10 @@ in with pinned_pkgs; python3Packages.buildPythonApplication rec {
   propagatedBuildInputs = with python3Packages; [
     beautifulsoup4
     lxml
-    # nltk
+    nltk
     pycurl
-    requests2
+    stemming
+    requests
     tkinter
   ];
 
