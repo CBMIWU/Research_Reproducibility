@@ -42,19 +42,19 @@ import ArticleManager
 am = ArticleManager.ArticleManager()
 
 # TODO
-# ge = am.get_articles_xml("./otherthings/test-resources/pmc_result_samp.xml","pmid",['23449283'])
-# next(ge)
+ge = am.get_articles_xml("./otherthings/test-resources/pmc_result_samp.xml","pmid",['23449283'])
+next(ge)
 
-# ge = am.get_articles_xml("./otherthings/test-resources/pmc_result_samp.xml","pmc",['3592787'])
-# next(ge)
+ge = am.get_articles_xml("./otherthings/test-resources/pmc_result_samp.xml","pmc",['3592787'])
+next(ge)
 
-# am.enter_redcap({'author_fn':'Johnny','author_ln':'Cash'},'9b7057f5f8894c9c')
-# am.enter_redcap({'clinical_domain':'cardiology','article_title':'lions have big hearts'},'9b7057f5f8894c9c')
-# am.enter_redcap({'clinical_domain':'cardiology'},'9b7057f5f8894c9c')
+am.enter_redcap({'author_fn':'Johnny','author_ln':'Cash'},'9b7057f5f8894c9c')
+am.enter_redcap({'clinical_domain':'cardiology','article_title':'lions have big hearts'},'9b7057f5f8894c9c')
+am.enter_redcap({'clinical_domain':'cardiology'},'9b7057f5f8894c9c')
 
-# am = ArticleManager.ArticleManager(run_style=0)
-# am.enter_redcap({'author_fn':'bruce','author_ln':'willis'},'9b7057f5f8894c9c')
-# am.enter_redcap({'author_fn':'the green goblin','author_email':'BlueGoblinsSUCK@greenmail.com'},'9b7057f5f8894c9c')
+am = ArticleManager.ArticleManager(run_style=1)
+am.enter_redcap({'author_fn':'bruce','author_ln':'willis'},'9b7057f5f8894c9c')
+am.enter_redcap({'author_fn':'the green goblin','author_email':'BlueGoblinsSUCK@greenmail.com'},'9b7057f5f8894c9c')
 
 from Article import RawArticle
 ra = RawArticle("./otherthings/test-resources/PCD-10-E29.pdf")
@@ -63,7 +63,7 @@ ra.text[:1000]
 print("~~~ Testing ArticleExtractor ~~~")
 
 import ArticleExtractor
-ae = ArticleExtractor.ArticleExtractor(run_style=0)
+ae = ArticleExtractor.ArticleExtractor(run_style=1)
 ae.get_reviewer()
 ae.entry
 ae._get_hypotheses(ra.text)
@@ -82,16 +82,15 @@ ae.entry
 print("~~~ Testing Article ~~~")
 
 import Article
-pdf = Article.PDFArticle('/Users/christian/Desktop/cbmi/reproduce/python/articles/21411379.pdf','21411379','pmid',run_style=1)
+pdf = Article.PDFArticle('./otherthings/test-resources/PCD-10-E29.pdf','21411379','pmid',run_style=1)
 pdf.get_inex_criteria()
 pdf.get_stats()
 pdf.get_limitations()
 
-xmla = Article.XMLArticle('10.5888/pcd10.120097','doi',bs=next(am.get_articles_xml('/Users/christian/Desktop/cbmi/reproduce/python/articles/sub_pmc_result.xml','doi',['10.5888/pcd10.120097']))[0])
-import sys
-sys.stdout.write(xmla.bs.text[:1000])
+xmla = Article.XMLArticle('10.5888/pcd10.120097','doi',bs=next(am.get_articles_xml('./otherthings/test-resources/pmc_result_samp.xml','doi',['10.5888/pcd10.120097']))[0])
 
-sys.stdout.write(xmla.xml_section('methods','background'))
+print(xmla.bs.text[1000:1005])
+print(xmla.xml_section('methods','background')[5:10])
 xmla.get_hypotheses()
 xmla.get_stats()
 xmla.get_inex_criteria()

@@ -8,8 +8,8 @@ import nltk
 import re
 import requests
 import sys
-import textract
-# import pdftotext
+# import textract
+import pdftotext
 
 class RawArticle(object):
     def __init__(self,file):
@@ -18,16 +18,12 @@ class RawArticle(object):
     def get_text(self,file):
         if (not re.search(r'.pdf',file)):
             file = file + ".pdf"
-        try:
-            text = textract.process(file)
-            # text = pdftotext.pdftotext(file)
-            text = text.strip()
-            text = re.sub(b'\n+',b" ",text)
-            text = re.sub(b'\s+',b" ",text)
-            return text.decode("utf-8")
-        except Exception as e:
-        	print("file: {} not found\ninformation from textract:\n\t{}".format(file,e))
-        return 0
+        # text = textract.process(file)
+        text = pdftotext.pdftotext(file)
+        text = text.strip()
+        text = re.sub(b'\n+',b" ",text)
+        text = re.sub(b'\s+',b" ",text)
+        return text.decode("utf-8", errors="ignore")
 
 class XMLArticle(ArticleExtractor,XMLExtractor):
     def __init__(self,article_id,identifier,**kwargs):

@@ -219,10 +219,11 @@ class ArticleManager(DatabaseManager):
         Is this your first rodeo? (if yes, type yes and press enter; otherwise, press enter): no
         0
         """
-        if (self.run_style):
+        if self.run_style == 1:
             return 0
+        print(question)
         can_answer = input(
-            question + " (if yes, type yes and press enter; otherwise, press enter): ")
+            " (if yes, type yes and press enter; otherwise, press enter): ")
         print("\n\n")
         if re.search(r'yes', can_answer, re.I):
             return 1
@@ -246,7 +247,7 @@ class ArticleManager(DatabaseManager):
 
         Run the code above to see the window
         """
-        if (self.run_style == 1):
+        if self.run_style == 1:
             self.user_choice = -1
             return
 
@@ -461,7 +462,7 @@ class ArticleManager(DatabaseManager):
         >>> am.entry
         {'inclusion_and_exclusion_stated': '1'}
         """
-        if (self.run_style):
+        if self.run_style == 1:
             self.assign(redcap, value)
             return 1
 

@@ -44,6 +44,7 @@ class ArticleExtractor(ArticleManager):
     def __init__(self, **kwargs):
         # pass run_style and metadata keyword argument on to ArticleManager
         # constructor (if provided)
+        kwargs.pop("bs", None)
         super(ArticleExtractor, self).__init__(**kwargs)
 
     def clean_entry(self):
