@@ -29,6 +29,7 @@ in with pinned_pkgs; python3Packages.buildPythonApplication rec {
     stemming
     requests
     tkinter
+    xpdf # pdftotext
   ];
 
   meta = with stdenv.lib; {
