@@ -101,9 +101,6 @@ class XMLExtractor(DatabaseManager):
 
 		As far as I can tell, BeautifulSoup wont throw an error as long as the argument is a string.
 		"""
-		if (type(xml) is not str):
-			print("parse_xml called on: '{}'\n invalid type, arg must be type string but is: {}".format(xml,type(xml)))
-			return 0
 		data = BeautifulSoup(xml,'lxml')
 		if (not data.pubmedarticle):
 			e = "xml was not proper format (no 'pubmedarticle' tag found). likely, the wrong (but valid) website was entered"
