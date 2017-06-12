@@ -12,7 +12,7 @@ with pkgs.python3Packages; buildPythonPackage rec {
     sha256 = "05wifsbc6gbs31myp43s70h99vfnzg4hhgmkydnlfsrnwlgzjj6l";
   };
 
-  meta = with stdenv.lib; {
+  meta = with pkgs.stdenv.lib; {
     description = "Python implementations of various stemming algorithms.";
     homepage = "https://pypi.python.org/pypi/stemming";
     license = licenses.publicDomain;
