@@ -1,0 +1,2428 @@
+<?xml version="1.0"?>
+<!DOCTYPE pmc-articleset PUBLIC "-//NLM//DTD ARTICLE SET 2.0//EN" "http://dtd.nlm.nih.gov/ncbi/pmc/articleset/nlm-articleset-2.0.dtd">
+<pmc-articleset>
+<article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" article-type="research-article">
+  <?properties open_access?>
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">Prev Chronic Dis</journal-id>
+      <journal-id journal-id-type="iso-abbrev">Prev Chronic Dis</journal-id>
+      <journal-id journal-id-type="publisher-id">PCD</journal-id>
+      <journal-title-group>
+        <journal-title>Preventing Chronic Disease</journal-title>
+      </journal-title-group>
+      <issn pub-type="epub">1545-1151</issn>
+      <publisher>
+        <publisher-name>Centers for Disease Control and Prevention</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="pmid">23449283</article-id>
+      <article-id pub-id-type="pmc">3592787</article-id>
+      <article-id pub-id-type="publisher-id">12_0097</article-id>
+      <article-id pub-id-type="doi">10.5888/pcd10.120097</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>CME Activity</subject>
+        </subj-group>
+        <series-title>Peer Reviewed</series-title>
+      </article-categories>
+      <title-group>
+        <article-title>An Algorithm That Identifies Coronary and Heart Failure Events in the Electronic Health Record</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author" corresp="yes">
+          <name>
+            <surname>Kottke</surname>
+            <given-names>Thomas E.</given-names>
+          </name>
+          <degrees>MD</degrees>
+          <degrees>MSPH</degrees>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Baechler</surname>
+            <given-names>Courtney Jordan</given-names>
+          </name>
+          <degrees>MD</degrees>
+          <degrees>MCE</degrees>
+        </contrib>
+        <aff id="aff1">Author Information: Courtney Jordan Baechler, Department of Medicine, School of Public Health, University of Minnesota, Minneapolis, Minnesota.</aff>
+      </contrib-group>
+      <author-notes>
+        <corresp id="cor1">Corresponding Author: Thomas E. Kottke, MD, MSPH, HealthPartners Institute for Education and Research, 8170 33rd Ave S, PO Box 1524, MS 21111R, Minneapolis, MN 55440-1524. Telephone: 952-967-5088. E-mail: <email xlink:href="Thomas.E.Kottke@HealthPartners.com">Thomas.E.Kottke@HealthPartners.com</email>.</corresp>
+      </author-notes>
+      <pub-date pub-type="collection">
+        <year>2013</year>
+      </pub-date>
+      <pub-date pub-type="epub">
+        <day>28</day>
+        <month>2</month>
+        <year>2013</year>
+      </pub-date>
+      <volume>10</volume>
+      <elocation-id>E29</elocation-id>
+      <abstract>
+        <sec>
+          <title>Introduction</title>
+          <p>The advent of universal health care coverage in the United States and the use of electronic health records can make the medical record a disease surveillance tool. The objective of our study was to identify criteria that accurately categorize acute coronary and heart failure events by using electronic health record data exclusively so that the medical record can be used for surveillance without manual record review.</p>
+        </sec>
+        <sec>
+          <title>Methods</title>
+          <p>We serially compared 3 computer algorithms to manual record review. The first 2 algorithms relied on ICD-9-CM (<italic>International Classification of Diseases, 9th Revision, Clinical Modification</italic>) codes, troponin levels, electrocardiogram (ECG) data, and echocardiograph data. The third algorithm relied on a detailed coding system, Intelligent Medical Objects, Inc., (IMO) interface terminology, troponin levels, and echocardiograph data.</p>
+        </sec>
+        <sec>
+          <title>Results</title>
+          <p>Cohen&#x2019;s &#x3BA; for the initial algorithm was 0.47 (95% confidence interval [CI], 0.41&#x2013;0.54). Cohen&#x2019;s &#x3BA; was 0.61 (95% CI, 0.55&#x2013;0.68) for the second algorithm. Cohen&#x2019;s &#x3BA; for the third algorithm was 0.99 (95% CI, 0.98&#x2013;1.00).</p>
+        </sec>
+        <sec>
+          <title>Conclusion</title>
+          <p>Electronic medical record data are sufficient to categorize coronary heart disease and heart failure events without manual record review. However, only moderate agreement with medical record review can be achieved when the classification is based on 4-digit ICD-9-CM codes because ICD-9-CM 410.9 includes myocardial infarction with elevation of the ST segment on ECG (STEMI) and myocardial infarction without elevation of the ST segment on ECG (nSTEMI). Nearly perfect agreement can be achieved using IMO interface terminology, a more detailed coding system that tracks to ICD9, ICD10 (<italic>International Classification of Diseases, Tenth Revision, Clinical Modification</italic>), and SnoMED-CT (Systematized Nomenclature of Medicine &#x2013; Clinical Terms).</p>
+        </sec>
+      </abstract>
+    </article-meta>
+  </front>
+  <body>
+    <sec>
+      <title>MEDSCAPE CME</title>
+      <p>Medscape, LLC is pleased to provide online continuing medical education (CME) for this journal article, allowing clinicians the opportunity to earn CME credit.</p>
+      <p>This activity has been planned and implemented in accordance with the Essential Areas and policies of the Accreditation Council for Continuing Medical Education through the joint sponsorship of Medscape, LLC and Preventing Chronic Disease. Medscape, LLC is accredited by the ACCME to provide continuing medical education for physicians.</p>
+      <p>Medscape, LLC designates this Journal-based CME activity for a maximum of 1 <bold>AMA PRA Category 1 Credit(s)&#x2122;</bold>. Physicians should claim only the credit commensurate with the extent of their participation in the activity.</p>
+      <p>All other clinicians completing this activity will be issued a certificate of participation. To participate in this journal CME activity: (1) review the learning objectives and author disclosures; (2) study the education content; (3) take the post-test with a 70% minimum passing score and complete the evaluation at <ext-link ext-link-type="uri" xlink:href="www.medscape.org/journal/pcd">www.medscape.org/journal/pcd</ext-link> (4) view/print certificate.</p>
+      <p>
+<bold>Release date: February 27, 2013; Expiration date: February 27, 2014</bold>
+</p>
+      <sec>
+        <title>Learning Objectives</title>
+        <p>Upon completion of this activity, participants will be able to:</p>
+        <list list-type="bullet">
+          <list-item>
+            <p>Analyze recommendations regarding surveillance systems for cardiovascular disease</p>
+          </list-item>
+          <list-item>
+            <p>Compare electronic with manual health records in identifying cases of cardiovascular disease</p>
+          </list-item>
+          <list-item>
+            <p>Assess the accuracy of electronic electrocardiogram data in identifying cases of myocardial infarction</p>
+          </list-item>
+          <list-item>
+            <p>Distinguish strategies to improve the accuracy of electronic records in the surveillance of cardiovascular disease</p>
+          </list-item>
+        </list>
+        <p>
+<bold>EDITORS</bold>
+</p>
+        <p>Rosemarie Perrin, editor; Caran Wilbanks, editor, <italic>Preventing Chronic Disease</italic>. Disclosure: Rosemarie Perrin and Caran Wilbanks have disclosed no relevant financial relationships.</p>
+        <p>
+<bold>CME AUTHOR</bold>
+</p>
+        <p>Charles P. Vega, MD, Health Sciences Clinical Professor; Residency Director, Department of Family Medicine, University of California, Irvine. Disclosure: Charles P. Vega, MD, has disclosed no relevant financial relationships.</p>
+        <p>
+<bold>AUTHORS AND CREDENTIALS</bold>
+</p>
+        <p>Disclosures: Thomas E. Kottke, MD, MSPH; and Courtney Jordan Baechler, MD, MCE, have disclosed no relevant financial relationships.</p>
+        <p>Affiliations: Thomas E. Kottke, HealthPartners Institute for Education and Research, Minneapolis, Minnesota; Courtney Jordan Baechler, Department of Medicine, School of Public Health, University of Minnesota, Minneapolis, Minnesota.</p>
+      </sec>
+    </sec>
+    <sec>
+      <title>Introduction</title>
+      <p>Surveillance to track the incidence, prevalence, and treatment of disease is a basic function of public health. Medical records can be used as surveillance tools, and the expense of manual record review could be avoided if medical records were representative of populations and if data in the medical record were standardized. Because the Patient Protection and Affordable Care Act will provide universal health care coverage for Americans (<xref ref-type="bibr" rid="R1">1</xref>), medical records could become a continuous population census. The Health Information Technology for Economic and Clinical Health (HITECH) Act and other authorities give the US Department of Health and Human Services the authority to promote electronic health records that permit electronic exchange of health information (<xref ref-type="bibr" rid="R2">2</xref>). Electronic information exchange could enable creation of a standardized data set for use in public health surveillance. The cataloging of cardiovascular and pulmonary disease surveys by an Institute of Medicine committee did not identify any algorithms that would enable use of the medical record to assess opportunities to improve outcomes across the broad spectrum of heart disease prevention and heart disease treatment (<xref ref-type="bibr" rid="R3">3</xref>). Nevertheless, the committee did recognize that electronic health records may be an emerging source of disease surveillance data and recommended that surveillance systems be designed so that they contribute to improved patient outcomes (<xref ref-type="bibr" rid="R3">3</xref>).</p>
+      <p>We are developing a decision-support tool that will identify opportunities for preventing heart disease and for improving outcomes for patients with heart disease (<xref ref-type="bibr" rid="R4">4</xref>&#x2013;<xref ref-type="bibr" rid="R6">6</xref>). The first step in using the decision support tool is to classify each event by using an algorithm. In an attempt to eliminate the need for manual review of the medical record, we tested whether an electronic medical record of a medical group contained the data necessary to create an algorithm that could accurately categorize acute coronary heart disease and heart failure events.</p>
+    </sec>
+    <sec sec-type="methods">
+      <title>Methods</title>
+      <p>The first iteration of the computer algorithm was approved on November 20, 2008, by the HealthPartners Research Foundation Institutional Review Board as protocol no. 08&#x2013;093, and the next 2 iterations were approved on September 21, 2009, as part of protocol no. 09&#x2013;023. We completed the analysis on February 29, 2012.</p>
+      <sec>
+        <title>Manual record review criteria</title>
+        <p>The algorithm classifies coronary heart disease and heart failure events into 6 types: 1) acute myocardial infarction with ST segment elevation (STEMI) on electrocardiogram (ECG), 2) acute heart failure with a left ventricular ejection fraction at or below 35% (systolic heart failure), 3) acute myocardial infarction without ST segment elevation (nSTEMI) on ECG, 4) unstable angina or other acute ischemic event (unstable angina), 5) incident diagnosis made in the ambulatory setting (ambulatory presentation), and 6) chronic prevalent disease without an acute event during the period of interest (chronic disease). The classification system is hierarchical: a patient with a STEMI complicated by acute heart failure would be classified as having a STEMI. Likewise, a patient with acute heart failure, elevated levels of troponin (a protein that is present in blood during acute myocardial infarction), and an ECG that did not show a STEMI would be classified as having acute heart failure. The diagnoses are presented in hierarchical order in the first column of the <xref ref-type="table" rid="T1">Table</xref>.</p>
+        <table-wrap id="T1" orientation="portrait" position="float">
+          <label>Table</label>
+          <caption>
+            <title>Manual Review Criteria and Criteria Used to Categorize Event Types: A Computer Algorithm That Identifies Coronary and Heart Failure Events in the Electronic Health Record<xref rid="T1FN1" ref-type="table-fn">a</xref>
+</title>
+          </caption>
+          <table frame="hsides" rules="groups">
+            <col width="70" span="1"/>
+            <col width="102" span="1"/>
+            <col width="90" span="1"/>
+            <col width="88" span="1"/>
+            <col width="91" span="1"/>
+            <thead>
+              <tr>
+                <th valign="bottom" align="left" scope="col" rowspan="1" colspan="1">Event Type</th>
+                <th valign="bottom" align="center" scope="col" rowspan="1" colspan="1">Manual Review Criteria</th>
+                <th valign="bottom" align="center" scope="col" rowspan="1" colspan="1">First Iteration of Computer Algorithm (N = 254)</th>
+                <th valign="bottom" align="center" scope="col" rowspan="1" colspan="1">Second Iteration of Computer Algorithm (N = 245)</th>
+                <th valign="bottom" align="center" scope="col" rowspan="1" colspan="1">Third Iteration of Computer Algorithm (N = 184)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td valign="top" align="left" scope="row" rowspan="1" colspan="1">1. STEMI</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">Hospital discharge code<xref rid="T1FN2" ref-type="table-fn">b</xref> 410.0&#x2013;410.6 or 410.8 OR 410.7 or 410.9 and &#x2265;1 troponin level &gt;3 &#xD7; ULN and serial ECGs show evolving ST elevation by visual inspection and clinical history consistent with acute coronary syndrome OR diagnosis of STEMI on discharge summary.</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">Hospital discharge code 410.0&#x2013;410.9 plus &#x2265;1 troponin level &gt; ULN; statements on &#x2265;1 ECG indicate acute ST elevation consistent with acute MI; n = 64 when combined with nSTEMI category.</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">Hospital discharge code 410.0&#x2013;410.6 or 410.8 OR code 410.7, 410.9, and any MUSE<xref rid="T1FN3" ref-type="table-fn">c</xref> acronym 964&#x2013;968 on &#x2265;1 ECG plus &#x2265;1 troponin level &gt;3 &#xD7; ULN; n = 24.</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">Any hospital discharge code starting with 410.0&#x2013;410.6, 410.8, or IMO term 410.90CP, 410.90CS, 410.90CU, 410.90CX, 410.90DV, 410.90FZ, 410.90GB, 410.90GD, 410.91D, 410.92F, or 410.92S; n = 50.</td>
+              </tr>
+              <tr>
+                <td valign="top" align="left" scope="row" rowspan="1" colspan="1">2. Acute heart failure with symptomatic depressed left ventricular contractility</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">Hospital discharge code 425 or 428 as primary diagnosis and EF is &#x2264;35%, BNP &gt; ULN if measured, and dyspnea, pleural effusions, or other symptoms and signs are reason for hospitalization.</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">Hospital discharge code 425 or 428 as primary diagnosis plus BNP &gt; ULN. Troponin may be positive; n = 56.</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">Hospital discharge code 425 or 428 as primary diagnosis plus BNP &gt; ULN and EF &#x2264;35%. Troponin may be positive; n = 21.</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">Hospital discharge code 425 or 428 as primary diagnosis plus BNP &gt; ULN and EF &#x2264;35%. Troponin may be positive; n = 34.</td>
+              </tr>
+              <tr>
+                <td valign="top" align="left" scope="row" rowspan="1" colspan="1">3. nSTEMI</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">410.7 or 410.9 or 420&#x2013;429 and &#x2265;1 troponin level &gt;3 &#xD7; ULN; and clinical history consistent with acute coronary syndrome. Serial ECGs do not show evolving ST elevation by visual inspection OR diagnosis of nSTEMI on discharge summary.</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">410.7&#x2013;410.9 or 420&#x2013;429 plus &#x2265;1 troponin level &gt; ULN and no ECG codes with evolving ST elevation; n = 64 when combined with STEMI category.</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">Hospital discharge code 410.7 or 410.9 without any MUSE<xref rid="T1FN3" ref-type="table-fn">c</xref> acronym 964&#x2013;968 on any ECG associated with the episode of care. Also, have &#x2265;1 troponin level &gt;3 &#xD7; ULN; n = 50.</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">Any hospital discharge code starting with 410.7, or IMO<xref rid="T1FN4" ref-type="table-fn">d</xref> term 410.90BT, 410.90CQ, 410.90CR, 410.90FY, 410.90GC, 410.90GE, 410.90N, 410.92E, 410.92H, or 410.91 (except 410.91D); n = 50.</td>
+              </tr>
+              <tr>
+                <td valign="top" align="left" scope="row" rowspan="1" colspan="1">4. Unstable angina</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">Hospitalized with code 411.x or 786.5 and clinical history consistent with heart disease problem, and no troponin level &gt;3 &#xD7; ULN.</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">Code 411.x and no troponin level &gt; ULN; n = 70.</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">Hospital discharge code 411.x or 786.5x and no troponin level &gt;3 &#xD7; ULN. No procedure codes for insertion of pacemaker or defibrillator (37.80&#x2013;37.99; CPT-4 33216); n = 50.</td>
+                <td valign="middle" align="left" rowspan="1" colspan="1">Category deleted by authors</td>
+              </tr>
+              <tr>
+                <td valign="top" align="left" scope="row" rowspan="1" colspan="1">5. Ambulatory presentation</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">Clinical history documents first episode of heart disease<xref rid="T1FN5" ref-type="table-fn">e</xref> and presentation in an outpatient office.</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">No nonelective hospitalization at time of diagnosis. &#x2265;2 years of observation before first diagnosis; n = 39.</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">First claim for heart disease<xref rid="T1FN5" ref-type="table-fn">e</xref> is from an office. No prior claims for heart disease in the medical record. &#x2265;2 years of observation before period of interest; n = 50.</td>
+                <td rowspan="2" valign="middle" align="right" colspan="1">Patient has heart disease diagnosis at any time. No nonelective hospitalization for heart disease<xref rid="T1FN5" ref-type="table-fn">e</xref> during period of interest; n = 50.</td>
+              </tr>
+              <tr>
+                <td valign="top" align="left" scope="row" rowspan="1" colspan="1">6. Chronic prevalent disease</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">Heart disease<xref rid="T1FN5" ref-type="table-fn">e</xref> present before the period of interest. No hospitalization for heart disease<xref rid="T1FN5" ref-type="table-fn">e</xref> during the period of interest.</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">&#x2265;2 years of observation with codes 412&#x2013;414 or 420&#x2013;429 in first year of enrollment; n = 25.</td>
+                <td valign="top" align="left" rowspan="1" colspan="1">&#x2265;2 years of observation with heart disease<xref rid="T1FN5" ref-type="table-fn">e</xref> diagnosed before the period of interest. No hospitalization for heart disease<xref rid="T1FN5" ref-type="table-fn">e</xref> or chest pain (786.5) during period of interest; n = 50.</td>
+              </tr>
+              <tr>
+                <td valign="top" align="left" scope="row" rowspan="1" colspan="1">Cohen&#x2019;s &#x3BA; (95% confidence interval)</td>
+                <td valign="middle" align="right" rowspan="1" colspan="1">NA</td>
+                <td valign="middle" align="right" rowspan="1" colspan="1">0.47 (0.41&#x2013;0.54)</td>
+                <td valign="middle" align="right" rowspan="1" colspan="1">0.61 (0.55&#x2013;0.68)</td>
+                <td valign="middle" align="right" rowspan="1" colspan="1">0.99 (0.98&#x2013;1.00)</td>
+              </tr>
+            </tbody>
+          </table>
+          <table-wrap-foot>
+            <fn>
+              <p>Abbreviations: STEMI, myocardial infarction with ST elevation; ULN, upper limits of normal; ECG, electrocardiogram; MI, myocardial infarction; nSTEMI, myocardial infarction without ST elevation; EF, ejection fraction; BNP, B-type naturetic peptide; CPT, common procedural terminology; NA, not applicable.</p>
+            </fn>
+            <fn id="T1FN1">
+              <label>a</label>
+              <p> Categories are hierarchical with 1 being the highest. The number of cases identified by the computer algorithm is provided in each cell.</p>
+            </fn>
+            <fn id="T1FN2">
+              <label>b</label>
+              <p> All codes are from <italic>International Classification of Diseases, 9th Revision, Clinical Modification</italic> (<xref ref-type="bibr" rid="R14">14</xref>).</p>
+            </fn>
+            <fn id="T1FN3">
+              <label>c</label>
+              <p> MUSE Cardiology Information System (<ext-link ext-link-type="uri" xlink:href="http://www.gehealthcare.com/euen/cardiology/products/diagnostic_ecg/database-management/index.html">http://www.gehealthcare.com/euen/cardiology/products/diagnostic_ecg/database-management/index.html</ext-link>).</p>
+            </fn>
+            <fn id="T1FN4">
+              <label>d</label>
+              <p> Intelligent Medical Objects, Inc (<ext-link ext-link-type="uri" xlink:href="http://www.e-imo.com/press/10960.aspx">http://www.e-imo.com/press/10960.aspx</ext-link>).</p>
+            </fn>
+            <fn id="T1FN5">
+              <label>e</label>
+              <p> Codes 410&#x2013;414, or code 425 or code 428.</p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+      </sec>
+      <sec>
+        <title>First iteration</title>
+        <p>For the first iteration of the computer algorithm we used medical record data from 254 HealthPartners Medical Group (HPMG) patients who were also insured by HealthPartners. These patients were aged 40 to 74 years and had been treated for coronary heart disease or systolic heart failure from August 8, 2007, through July 31, 2008. August 8 was chosen as the start date because that was the day that the hospital ECG data file and the outpatient ECG data file were combined into a single file. To be included, patients needed to be HPMG patients so that we had access to their clinical records, and they needed to be insured by HealthPartners so that we had access to the ICD-9-CM diagnostic codes associated with their claims data. We used the computer algorithm to select patient records of coronary heart disease and heart failure events from each of the 6 categories. Each of the records was randomly assigned to a cardiologist (T.E.K. or C.J.B.) for manual record review, and 48 records were reviewed by both cardiologists. The cardiologists agreed on the diagnosis for 47 of the 48 patients. We sampled patient records until we had at least 30 verified cases of coronary heart disease and heart failure in each diagnostic category or had exhausted potential records for analysis. This process resulted in more than 30 cases identified as fitting some of the 6 diagnostic categories. The initial computer algorithm is presented in column 3 of the <xref ref-type="table" rid="T1">Table</xref>. We used SAS version 9.2 (SAS Institute Inc., Cary, North Carolina) to calculate Cohen&#x2019;s &#x3BA; for all events combined and revised the computer algorithm in response to post hoc analyses of the discordant cases.</p>
+        <p>After an ECG is interpreted by a physician, the text interpretation is converted to numerical codes and stored in an electronic database. During the first iteration, it was not possible to search the database for ECGs that had codes consistent with a STEMI. Software that supported search for codes became available when we were working on the second iteration, so we added ECG computer codes to the algorithms for STEMIs and nSTEMIs. As described in column 4 of the Table, we added ICD-9-CM 786.5 to the screening codes for unstable angina and excluded patients who had been admitted for pacemaker or defibrillator placement or revision. For the diagnosis of ambulatory presentation we required that the first insurance claim for heart disease was from an office visit, that there were no prior insurance claims for heart disease, and that there were 2 or more years of observations in the medical record. For chronic prevalent disease we required 2 or more years of observation with heart disease diagnosed before the period of interest and no hospitalization for heart disease or chest pain during the period of interest.</p>
+      </sec>
+      <sec>
+        <title>Second iteration</title>
+        <p>We analyzed 245 cases to test the second iteration of the computer algorithm. We based the second iteration on data from HPMG patients who were also insured by HealthPartners and were treated by HPMG from January 1 through December 31, 2010. We used the second iteration to draw random samples for each diagnostic category, and 2 nurses and a physician reviewed the medical records. As with the first iteration, we calculated Cohen&#x2019;s &#x3BA; and revised the computer algorithm in response to post hoc analysis of the discordant cases.</p>
+      </sec>
+      <sec>
+        <title>Third iteration</title>
+        <p>We analyzed 184 records for the third algorithm, 50 each for STEMI, nSTEMI, and chronic prevalent disease and 34 for acute heart failure with a depressed ejection fraction. We did not require HPMG patients to be insured by HealthPartners for the third iteration, because we did not need claims data to identify ICD-9-CM codes. However, 87% of the patients in the sampling frame had been insured by HealthPartners at some time, and 57% were insured by HealthPartners in 2010. As with the second iteration, the sampling time frame was from January 1 through December 31, 2010. We modified the computer algorithm for the third iteration (<xref ref-type="table" rid="T1">Table)</xref> with 3 major changes. First, we used Intelligent Medical Objects, Inc, interface terminology (IMO terms) to distinguish between STEMI and nSTEMI. IMO terms are codes that are based on ICD-9-CM codes but have specificity added with a fifth numerical digit and 1 or more letters following the numerals. For example, in addition to IMO terms 410.0&#x2013;410.6 and 410.8 that are specific for STEMI, there are eleven 410.9 IMO terms that are specific for STEMI. In addition to 410.7, which is specific for nSTEMI there are at least 10 additional IMO terms that identify nSTEMI. IMO terms map to ICD-9-CM, ICD-10, and SnoMED-CT (<xref ref-type="bibr" rid="R7">7</xref>). Epic (Epic, Verona, Wisconsin), Cerner (Cerner Corporation, North Kansas City, Missouri), NextGen (NextGen Healthcare, Horsham, Pennsylvania), and several other electronic medical record systems incorporate IMO terms in their software. Epic stores these statements in the medical record.</p>
+        <p>We made the second modification, eliminating the category of unstable angina, because we found that most patients in this category already have a diagnosis of coronary heart disease. Because there is no compelling evidence that a patient hospitalized for chest pain with normal troponin levels benefits from an angiogram or therapies other than risk factor control, all gaps in their care would be detected during the analysis of patients with chronic disease.</p>
+        <p>We made the third modification, combining ambulatory presentation and chronic disease into a single category, because pursuit of therapies other than symptom control, daily aspirin, and risk factor control for a patient who has coronary heart disease diagnosed in the ambulatory setting is optional and based on the results of further diagnostic testing.</p>
+      </sec>
+    </sec>
+    <sec sec-type="results">
+      <title>Results</title>
+      <p>We compared the classification by the computer algorithm to manual record review in 254 patients in the first iteration. After we developed the computer algorithm for the first iteration, we learned that ECG analysis software used by HPMG at that time did not permit searching for abnormalities across patients. Thus, we could not distinguish between STEMIs and nSTEMIs without manual review of the ECGs. However, when we grouped STEMIs and nSTEMIs together, we achieved 94% (60/64) agreement between the computer algorithm and manual review of the cases that were identified as myocardial infarction by the computer algorithm. Agreement in the other categories ranged from 38% for ambulatory presentation to 52% for systolic heart failure; 46 of the cases selected by the computer algorithm did not fit any of the 6 categories by manual record review. Overall agreement on the first iteration was 57% (Cohen&#x2019;s &#x3BA;, 0.47; 95% confidence interval [CI], 0.41&#x2013;0.54) when STEMIs and nSTEMIs were considered as a single category (<xref ref-type="table" rid="T1">Table</xref>).</p>
+      <p>We compared classification with the computer algorithm to manual review in 245 patient records for the second iteration. Agreement was 67% (16/24) for STEMI diagnoses and 100% (21/21) for heart failure diagnoses. Agreement for nSTEMI diagnoses was 78% (39/50) and 38% (19/50) for unstable angina. Agreement was 46% (23/50) for ambulatory presentation and 90% (45/50) for chronic disease diagnoses. Overall agreement was 67% (163/245), and Cohen&#x2019;s &#x3BA; was 0.61 (95% CI, 0.55&#x2013;0.68) (<xref ref-type="table" rid="T1">Table</xref>).</p>
+      <p>We compared classification with the computer algorithm to manual review in 184 cases for the third iteration. The only disagreement was a single patient diagnosis identified as an nSTEMI by the computer algorithm and systolic heart failure by the reviewers. Overall agreement was greater than 99%, and Cohen&#x2019;s &#x3BA; was 0.99 (95% CI, 0.98&#x2013;1.00).</p>
+    </sec>
+    <sec sec-type="discussion">
+      <title>Discussion</title>
+      <p>By using an algorithm that processes only electronic data from the medical records of patients treated for coronary heart disease or heart failure, we were able to replicate the clinician&#x2019;s diagnosis with a high degree of accuracy. To distinguish between STEMI and nSTEMI, the algorithm uses highly specific diagnostic statements (<xref ref-type="bibr" rid="R7">7</xref>) that map to ICD-9-CM, ICD-10, SnoMED CT, and Unified Medical Language System (<xref ref-type="bibr" rid="R8">8</xref>). Four-digit ICD-9-CM codes are not detailed enough to make the distinction, because the code 410.9 can represent both STEMI and nSTEMI.</p>
+      <p>Our study has limitations. The analysis is based on the records of only 1 medical group; other groups may have a different experience, so algorithm performance should be tested before adoption for routine use. The purpose of this study is to determine the best algorithm with which to estimate the number and type of acute events in a population. If the purpose were to identify patients for case management or to possibly change treatment strategies, a final step of manual record review might be indicated.</p>
+      <p>It appears unlikely that electronic data can be used to distinguish unstable angina pectoris from symptoms of chest pain and dyspnea that are not due to ischemic heart disease. However, we believe that this is not an important task. Given the sensitivity of troponin assays to detect ischemia and the fact that many of the patients who have normal troponin levels while hospitalized with chest pain or dyspnea are already known to have heart disease, it is probably not necessary to identify this class of patients. There is no compelling evidence that angioplasty reduces mortality in patients who have normal troponin levels in association with their chest pain. Proceeding to angiography would still be an option, but in this case angioplasty would be for symptom control, not mortality reduction.</p>
+      <p>The use of the ECG database to classify patients may deserve further attention. Only 3 of the 16 diagnoses that manual record review confirmed as STEMIs in the second iteration had codes in the ECG database that indicated ST elevation. Conversely, most of the ECGs with ST elevation codes were not associated with acute myocardial infarction. Using a combination of codes that indicates ST elevation followed by the appearance of Q-wave codes may be more fruitful, but if rescue angioplasty prevents the development of Q-waves, even this strategy would not detect STEMIs.</p>
+      <p>Our effort to classify events without manual record review is not unique. Natural language processing has been used to assess quality of care for acute myocardial infarction (<xref ref-type="bibr" rid="R9">9</xref>), and the eMERGE (Electronic Medical Records and Genomics) Network is promoting the sharing of case identification algorithms, mainly for genomics research (<xref ref-type="bibr" rid="R10">10</xref>). A systems dynamics simulation program developed by several organizations, including the Centers for Disease Control and Prevention (CDC), can be used to estimate the effect of preventive interventions, but it cannot compare the effect of preventive interventions with treatments of acute events (<xref ref-type="bibr" rid="R11">11</xref>).</p>
+      <p>It may not seem appropriate to accept the clinical diagnosis as the gold standard for acute myocardial infarction. Ideally, criteria would be based entirely on objective evidence. However, several points must be acknowledged. First, our goal with the project is to develop a method by which the clinician&#x2019;s diagnosis can be identified from electronic media with the granularity that is necessary to assess whether the patient received all of the evidence-based care that was indicated. We have shown that this is possible. Whether the clinician made the correct diagnosis is a different question. Second, all criteria depend to some extent on diagnostic coding, interpretation of laboratory data collected, and subjective interpretation of patient symptoms. Third, the development of a universal definition of myocardial infarction (<xref ref-type="bibr" rid="R12">12</xref>) means that, at least for centers where cardiologists practice, there is agreement about the meaning behind the diagnostic codes that are being assigned to patients&#x2019; events.</p>
+      <p>In 2007 the American Heart Association issued a scientific statement outlining the essential features of a surveillance system that would support the prevention and management of heart disease and stroke (<xref ref-type="bibr" rid="R13">13</xref>). Among other components, the statement called for the design and conduct of nationally representative surveillance programs that oversample ethnic subgroups and certain counties. The statement also declared that mechanisms should be developed to enable linkage between health care data systems, national surveillance programs, and electronic health records. The authors of the report acknowledged that the cost of these endeavors would be barriers to implementation. However, the changing health care landscape could markedly reduce the cost of these programs. If universal coverage is implemented and other electronic health record systems also have the capability to identify heart disease prevalence and gaps in evidence-based care, an opportunity to use the electronic health record as a public health surveillance tool at minimal cost will have been created.</p>
+    </sec>
+  </body>
+  <back>
+    <ack>
+      <title>Acknowledgments</title>
+      <p>The following provided funding for this study: HealthPartners Research Foundation (a partnership grant to T.E.K.), the Heart Disease and Stroke Prevention Unit at the Minnesota Department of Health from a Capacity Building &#x2014; Cooperative Agreement grant from CDC no. 5U50DP000721-04, and National Institutes of Health training grant no. T32 HL69764 (supporting C.J.B.).</p>
+    </ack>
+    <fn-group>
+      <fn>
+        <p>The opinions expressed by authors contributing to this journal do not necessarily reflect the opinions of the U.S. Department of Health and Human Services, the Public Health Service, the Centers for Disease Control and Prevention, or the authors' affiliated institutions.</p>
+      </fn>
+      <fn>
+        <p>
+<italic>Suggested citation for this article:</italic> Kottke TE, Baechler CJ. An Algorithm That Identifies Coronary and Heart Failure Events in the Electronic Health Record. Prev Chronic Dis 2013;10:120097. DOI: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.5888/pcd10.120097">http://dx.doi.org/10.5888/pcd10.120097</ext-link>.</p>
+      </fn>
+    </fn-group>
+    <ref-list>
+      <title>References</title>
+      <ref id="R1">
+        <label>1. </label>
+        <mixed-citation publication-type="web"><collab>HealthCare.gov</collab> Take health care into your own hands. US Department of Health and Human Services. <ext-link ext-link-type="uri" xlink:href="http://www.healthcare.gov/law/full/index.html">http://www.healthcare.gov/law/full/index.html</ext-link>
+<comment>Accessed August 29, 2012</comment></mixed-citation>
+      </ref>
+      <ref id="R2">
+        <label>2. </label>
+        <mixed-citation publication-type="web"><collab>US Department of Health and Human Services</collab> Health IT Rules and Regulations; <year>2012</year>
+<ext-link ext-link-type="uri" xlink:href="http://www.healthit.gov/policy-researchers-implementers/final-rules-regulations">http://www.healthit.gov/policy-researchers-implementers/final-rules-regulations</ext-link>
+<comment>Accessed August 29, 2012</comment></mixed-citation>
+      </ref>
+      <ref id="R3">
+        <label>3. </label>
+        <mixed-citation publication-type="book"><collab>Institute of Medicine</collab> A nationwide framework for surveillance of cardiovascular and chronic lung diseases. Washington (DC): The National Academies Press; <year>2011</year></mixed-citation>
+      </ref>
+      <ref id="R4">
+        <label>4. </label>
+        <mixed-citation publication-type="journal"><string-name>
+<surname>Kottke</surname>
+<given-names>TE</given-names>
+</string-name>, <string-name>
+<surname>Faith</surname>
+<given-names>DA</given-names>
+</string-name>, <string-name>
+<surname>Jordan</surname>
+<given-names>CO</given-names>
+</string-name>, <string-name>
+<surname>Pronk</surname>
+<given-names>NP</given-names>
+</string-name>, <string-name>
+<surname>Thomas</surname>
+<given-names>RJ</given-names>
+</string-name>, <string-name>
+<surname>Capewell</surname>
+<given-names>S</given-names>
+</string-name>. <article-title>The comparative effectiveness of heart disease prevention and treatment strategies.</article-title><source>Am J Prev Med</source><year>2009</year>;<volume>36</volume>(<issue>1</issue>):<fpage>82</fpage>&#x2013;<lpage>8</lpage>
+<pub-id pub-id-type="doi">10.1016/j.amepre.2008.09.010</pub-id><pub-id pub-id-type="pmid">19095166</pub-id></mixed-citation>
+      </ref>
+      <ref id="R5">
+        <label>5. </label>
+        <mixed-citation publication-type="journal"><string-name>
+<surname>Baechler</surname>
+<given-names>CJ</given-names>
+</string-name>, <string-name>
+<surname>Kottke</surname>
+<given-names>TE</given-names>
+</string-name>. <article-title>Identifying opportunities for a medical group to improve outcomes for patients with coronary artery disease and heart failure: an exploratory study.</article-title><source>Perm J</source><year>2011</year>;<volume>15</volume>(<issue>2</issue>):<fpage>4</fpage>&#x2013;<lpage>14</lpage><pub-id pub-id-type="pmid">21841919</pub-id></mixed-citation>
+      </ref>
+      <ref id="R6">
+        <label>6. </label>
+        <mixed-citation publication-type="journal"><string-name>
+<surname>Kottke</surname>
+<given-names>TE</given-names>
+</string-name>, <string-name>
+<surname>Baechler</surname>
+<given-names>CJ</given-names>
+</string-name>, <string-name>
+<surname>Parker</surname>
+<given-names>ED</given-names>
+</string-name>. <article-title>Accuracy of heart disease prevalence estimated from claims data compared with an electronic health record.</article-title><source>Prev Chronic Dis</source><year>2012</year>;<volume>9</volume>:<fpage>E141</fpage>
+<pub-id pub-id-type="doi">10.5888/pcd9.120009</pub-id><pub-id pub-id-type="pmid">22916996</pub-id></mixed-citation>
+      </ref>
+      <ref id="R7">
+        <label>7. </label>
+        <mixed-citation publication-type="web"><collab>Intelligent Medical Objects, Inc.</collab> Clinical interface terminology. <ext-link ext-link-type="uri" xlink:href="http://www.e-imo.com/vocabulary_products.aspx">http://www.e-imo.com/vocabulary_products.aspx</ext-link>
+<comment>Accessed March 5, 2012</comment></mixed-citation>
+      </ref>
+      <ref id="R8">
+        <label>8. </label>
+        <mixed-citation publication-type="web"><collab>US National Library of Medicine, National Institutes of Health</collab> SnoMED Clinical Terms. <ext-link ext-link-type="uri" xlink:href="http://www.nlm.nih.gov/research/umls/Snomed/snomed_main.html">http://www.nlm.nih.gov/research/umls/Snomed/snomed_main.html</ext-link>
+<comment>Accessed March 5, 2012</comment></mixed-citation>
+      </ref>
+      <ref id="R9">
+        <label>9. </label>
+        <mixed-citation publication-type="journal"><string-name>
+<surname>Chiang</surname>
+<given-names>JH</given-names>
+</string-name>, <string-name>
+<surname>Lin</surname>
+<given-names>JW</given-names>
+</string-name>, <string-name>
+<surname>Yang</surname>
+<given-names>CW</given-names>
+</string-name>. <article-title>Automated evaluation of electronic discharge notes to assess quality of care for cardiovascular diseases using Medical Language Extraction and Encoding System (MedLEE).</article-title><source>J Am Med Inform Assoc</source><year>2010</year>;<volume>17</volume>(<issue>3</issue>):<fpage>245</fpage>&#x2013;<lpage>52</lpage><pub-id pub-id-type="pmid">20442141</pub-id></mixed-citation>
+      </ref>
+      <ref id="R10">
+        <label>10. </label>
+        <mixed-citation publication-type="web"><collab>National Institutes of Health, National Human Genome Research Institute</collab> Electronic Medical Records and Genomics (eMERGE) Network. <ext-link ext-link-type="uri" xlink:href="http://www.genome.gov/27540473">http://www.genome.gov/27540473</ext-link>
+<comment>Accessed December 11, 2012</comment></mixed-citation>
+      </ref>
+      <ref id="R11">
+        <label>11. </label>
+        <mixed-citation publication-type="journal"><string-name>
+<surname>Homer</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Milstein</surname>
+<given-names>B</given-names>
+</string-name>, <string-name>
+<surname>Wile</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Trogdon</surname>
+<given-names>J</given-names>
+</string-name>, <string-name>
+<surname>Huang</surname>
+<given-names>P</given-names>
+</string-name>, <string-name>
+<surname>Labarthe</surname>
+<given-names>D</given-names>
+</string-name>, <etal/><article-title>Simulating and evaluating local interventions to improve cardiovascular health.</article-title><source>Prev Chronic Dis</source><year>2010</year>;<volume>7</volume>(<issue>1</issue>):1-11.<pub-id pub-id-type="pmid">20040233</pub-id></mixed-citation>
+      </ref>
+      <ref id="R12">
+        <label>12. </label>
+        <mixed-citation publication-type="journal"><string-name>
+<surname>Thygesen</surname>
+<given-names>K</given-names>
+</string-name>, <string-name>
+<surname>Alpert</surname>
+<given-names>JS</given-names>
+</string-name>, <string-name>
+<surname>White</surname>
+<given-names>HD</given-names>
+</string-name>, <string-name>
+<surname>Jaffe</surname>
+<given-names>AS</given-names>
+</string-name>, <string-name>
+<surname>Apple</surname>
+<given-names>FS</given-names>
+</string-name>, <string-name>
+<surname>Galvani</surname>
+<given-names>M</given-names>
+</string-name>, <etal/><article-title>Universal definition of myocardial infarction.</article-title><source>Eur Heart J</source><year>2007</year>;<volume>28</volume>(<issue>20</issue>):<fpage>2525</fpage>&#x2013;<lpage>38</lpage><pub-id pub-id-type="pmid">17951287</pub-id></mixed-citation>
+      </ref>
+      <ref id="R13">
+        <label>13. </label>
+        <mixed-citation publication-type="journal"><string-name>
+<surname>Goff</surname>
+<given-names>DC</given-names>
+<suffix>Jr</suffix>
+</string-name>, <string-name>
+<surname>Brass</surname>
+<given-names>L</given-names>
+</string-name>, <string-name>
+<surname>Braun</surname>
+<given-names>LT</given-names>
+</string-name>, <string-name>
+<surname>Croft</surname>
+<given-names>JB</given-names>
+</string-name>, <string-name>
+<surname>Flesch</surname>
+<given-names>JD</given-names>
+</string-name>, <string-name>
+<surname>Fowkes</surname>
+<given-names>FGR</given-names>
+</string-name>, <etal/><article-title>Essential features of a surveillance system to support the prevention and management of heart disease and stroke: a scientific statement from the American Heart Association Councils on Epidemiology and Prevention, Stroke, and Cardiovascular Nursing and the Interdisciplinary Working Groups on Quality of Care and Outcomes Research and Atherosclerotic Peripheral Vascular Disease.</article-title><source>Circulation</source><year>2007</year>;<volume>115</volume>(<issue>1</issue>):<fpage>127</fpage>&#x2013;<lpage>55</lpage>
+<pub-id pub-id-type="doi">10.1161/CIRCULATIONAHA.106.179904</pub-id><pub-id pub-id-type="pmid">17179025</pub-id></mixed-citation>
+      </ref>
+      <ref id="R14">
+        <label>14. </label>
+        <mixed-citation publication-type="web"><collab>Centers for Disease Control and Prevention</collab> International Classification of Diseases, 9th Revision, Clinical Modification. <ext-link ext-link-type="uri" xlink:href="http://www.cdc.gov/nchs/icd/icd9cm.htm">http://www.cdc.gov/nchs/icd/icd9cm.htm</ext-link>
+<comment>Accessed December 11, 2012</comment></mixed-citation>
+      </ref>
+    </ref-list>
+    <sec>
+      <title>Post-Test Information</title>
+      <p>To obtain credit, you should first read the journal article. After reading the article, you should be able to answer the following, related, multiple-choice questions. To complete the questions (with a minimum 70% passing score) and earn continuing medical education (CME) credit, please go to <ext-link ext-link-type="uri" xlink:href="http://www.medscape.org/journal/pcd">http://www.medscape.org/journal/pcd</ext-link>. Credit cannot be obtained for tests completed on paper, although you may use the worksheet below to keep a record of your answers. You must be a registered user on Medscape.org. If you are not registered on Medscape.org, please click on the "Register" link on the right hand side of the website to register. Only one answer is correct for each question. Once you successfully answer all post-test questions you will be able to view and/or print your certificate. For questions regarding the content of this activity, contact the accredited provider, CME@medscape.net. For technical assistance, contact CME@webmd.net. American Medical Association's Physician's Recognition Award (AMA PRA) credits are accepted in the US as evidence of participation in CME activities. For further information on this award, please refer to <ext-link ext-link-type="uri" xlink:href="http://www.ama-assn.org/ama/pub/category/2922.html">http://www.ama-assn.org/ama/pub/category/2922.html</ext-link>. The AMA has determined that physicians not licensed in the US who participate in this CME activity are eligible for <bold>AMA PRA Category 1 Credits&#x2122;</bold>. Through agreements that the AMA has made with agencies in some countries, AMA PRA credit may be acceptable as evidence of participation in CME activities. If you are not licensed in the US, please complete the questions online, print the AMA PRA CME credit certificate and present it to your national medical association for review.</p>
+    </sec>
+    <sec>
+      <title>Post-Test Questions</title>
+      <sec>
+        <title>Article Title: An Algorithm That Identifies Coronary and Heart Failure Events in the Electronic Health Record</title>
+        <p>
+<bold>CME Questions</bold>
+</p>
+        <list list-type="order">
+          <list-item>
+            <p>You are part of a task force trying to implement the 2007 American Heart Association recommendations for implementation of a surveillance system for cardiovascular disease. Which of the following statements regarding these recommendations is most accurate?</p>
+            <list list-type="alpha-upper">
+              <list-item>
+                <p>The focus of the surveillance should be limited to local populations only</p>
+              </list-item>
+              <list-item>
+                <p>All counties and ethnic subgroups should be represented equally in the sample</p>
+              </list-item>
+              <list-item>
+                <p>Systems should be in place to link healthcare data systems with the surveillance program</p>
+              </list-item>
+              <list-item>
+                <p>Cost should not be a factor in the implementation of a successful surveillance program</p>
+              </list-item>
+            </list>
+          </list-item>
+          <list-item>
+            <p>You want to set up the cardiovascular disease surveillance program using electronic health records. Which of the following statements regarding the accuracy of electronic vs manual records in the current study is most accurate?</p>
+            <list list-type="alpha-upper">
+              <list-item>
+                <p>Even basic electronic health records correlated well with manual records</p>
+              </list-item>
+              <list-item>
+                <p>Only electrocardiogram (ECG) data helped to correlate electronic health records with manual records</p>
+              </list-item>
+              <list-item>
+                <p>Agreement between electronic and manual health records was largely dependent upon modifications to the original iteration</p>
+              </list-item>
+              <list-item>
+                <p>There was no substantial agreement between manual and electronic health records in any study analysis</p>
+              </list-item>
+            </list>
+          </list-item>
+          <list-item>
+            <p>Your electronic health record contains an ECG analysis system. What should you consider regarding ECG data and myocardial infarctions in the current study?</p>
+            <list list-type="alpha-upper">
+              <list-item>
+                <p>The electronic ECG analysis was only effective in differentiating ST-segment elevation myocardial infarctions (STEMIs) from non-STEMIs (NSTEMIs)</p>
+              </list-item>
+              <list-item>
+                <p>The ECG system was effective in achieving agreement in the overall diagnosis of myocardial infarction</p>
+              </list-item>
+              <list-item>
+                <p>The ECG system effectively achieved agreement regarding myocardial infarction and the presence of ST elevation</p>
+              </list-item>
+              <list-item>
+                <p>The first iteration of the current system failed to identify myocardial infarction in all analyses</p>
+              </list-item>
+            </list>
+          </list-item>
+          <list-item>
+            <p>What else should you consider regarding electronic data in the current study?</p>
+            <list list-type="alpha-upper">
+              <list-item>
+                <p>Adding a more specific ICD-9 code with a fifth digit improved the accuracy of the electronic health record</p>
+              </list-item>
+              <list-item>
+                <p>The electronic health record outperformed the manual record in differentiating causes of chest pain</p>
+              </list-item>
+              <list-item>
+                <p>Most ECGs in the database with ST elevation were associated with diagnosis of acute myocardial infarction</p>
+              </list-item>
+              <list-item>
+                <p>STEMIs were identified to similar degrees in the manual and electronic health records</p>
+              </list-item>
+            </list>
+          </list-item>
+        </list>
+        <p>
+<bold>Evaluation</bold>
+</p>
+        <table-wrap id="T0" orientation="portrait" position="float">
+          <table frame="hsides" rules="groups">
+            <tbody>
+              <tr>
+                <td valign="bottom" align="left" scope="col" colspan="5" rowspan="1">
+<bold>1. The activity supported the learning objectives.</bold>
+</td>
+              </tr>
+              <tr>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">
+<bold>Strongly Disagree</bold>
+</td>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</td>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</td>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</td>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">
+<bold>Strongly Agree</bold>
+</td>
+              </tr>
+              <tr>
+                <td align="center" rowspan="1" colspan="1">1</td>
+                <td align="center" rowspan="1" colspan="1">2</td>
+                <td align="center" rowspan="1" colspan="1">3</td>
+                <td align="center" rowspan="1" colspan="1">4</td>
+                <td align="center" rowspan="1" colspan="1">5</td>
+              </tr>
+              <tr>
+                <td valign="bottom" align="left" scope="col" colspan="5" rowspan="1">
+<bold>2. The material was organized clearly for learning to occur.</bold>
+</td>
+              </tr>
+              <tr>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">
+<bold>Strongly Disagree</bold>
+</td>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">&#xA0;</td>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">&#xA0;</td>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">&#xA0;</td>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">
+<bold>Strongly Agree</bold>
+</td>
+              </tr>
+              <tr>
+                <td align="center" rowspan="1" colspan="1">1</td>
+                <td align="center" rowspan="1" colspan="1">2</td>
+                <td align="center" rowspan="1" colspan="1">3</td>
+                <td align="center" rowspan="1" colspan="1">4</td>
+                <td align="center" rowspan="1" colspan="1">5</td>
+              </tr>
+              <tr>
+                <td valign="bottom" align="left" scope="col" colspan="5" rowspan="1">
+<bold>3. The content learned from this activity will impact my practice.</bold>
+</td>
+              </tr>
+              <tr>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">
+<bold>Strongly Disagree</bold>
+</td>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">&#xA0;</td>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">&#xA0;</td>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">&#xA0;</td>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">
+<bold>Strongly Agree</bold>
+</td>
+              </tr>
+              <tr>
+                <td align="center" rowspan="1" colspan="1">1</td>
+                <td align="center" rowspan="1" colspan="1">2</td>
+                <td align="center" rowspan="1" colspan="1">3</td>
+                <td align="center" rowspan="1" colspan="1">4</td>
+                <td align="center" rowspan="1" colspan="1">5</td>
+              </tr>
+              <tr>
+                <td valign="bottom" align="left" scope="col" colspan="5" rowspan="1">
+<bold>4. The activity was presented objectively and free of commercial bias.</bold>
+</td>
+              </tr>
+              <tr>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">
+<bold>Strongly Disagree</bold>
+</td>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">&#xA0;</td>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">&#xA0;</td>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">&#xA0;</td>
+                <td valign="bottom" align="center" scope="col" rowspan="1" colspan="1">
+<bold>Strongly Agree</bold>
+</td>
+              </tr>
+              <tr>
+                <td align="center" rowspan="1" colspan="1">1</td>
+                <td align="center" rowspan="1" colspan="1">2</td>
+                <td align="center" rowspan="1" colspan="1">3</td>
+                <td align="center" rowspan="1" colspan="1">4</td>
+                <td align="center" rowspan="1" colspan="1">5</td>
+              </tr>
+            </tbody>
+          </table>
+        </table-wrap>
+      </sec>
+    </sec>
+  </back>
+</article>
+<article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" article-type="research-article">
+  <!--The publisher of this article does not allow downloading of the full text in XML form.-->
+  <?properties manuscript?>
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-journal-id">8002646</journal-id>
+      <journal-id journal-id-type="pubmed-jr-id">557</journal-id>
+      <journal-id journal-id-type="nlm-ta">Ann Emerg Med</journal-id>
+      <journal-id journal-id-type="iso-abbrev">Ann Emerg Med</journal-id>
+      <journal-title-group>
+        <journal-title>Annals of emergency medicine</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">0196-0644</issn>
+      <issn pub-type="epub">1097-6760</issn>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="pmid">24041783</article-id>
+      <article-id pub-id-type="pmc">3961764</article-id>
+      <article-id pub-id-type="doi">10.1016/j.annemergmed.2013.08.019</article-id>
+      <article-id pub-id-type="manuscript">NIHMS559175</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Article</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Transient and Sustained Changes in Operational Performance, Patient Evaluation, and Medication Administration During Electronic Health Record Implementation in the Emergency Department</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Ward</surname>
+            <given-names>Michael J.</given-names>
+          </name>
+          <degrees>MD, MBA</degrees>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Froehle</surname>
+            <given-names>Craig M.</given-names>
+          </name>
+          <degrees>PhD</degrees>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Hart</surname>
+            <given-names>Kimberly W.</given-names>
+          </name>
+          <degrees>MA</degrees>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Collins</surname>
+            <given-names>Sean P.</given-names>
+          </name>
+          <degrees>MD, MS</degrees>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Lindsell</surname>
+            <given-names>Christopher J.</given-names>
+          </name>
+          <degrees>PhD</degrees>
+        </contrib>
+        <aff id="A1">Department of Emergency Medicine, Vanderbilt University, Nashville, TN (Ward, Collins); the Carl H. Lindner College of Business, Department of Operations, Business Analytics and Information Systems (Froehle) and the Department of Emergency Medicine (Hart, Lindsell), University of Cincinnati, Cincinnati, OH; and the James M. Anderson Center for Health Systems Excellence, Cincinnati Children&#x2019;s Hospital Medical Center, Cincinnati, OH (Froehle)</aff>
+      </contrib-group>
+      <author-notes>
+        <corresp id="FN1">Address for correspondence: Michael J. Ward, MD, MBA, <email>mward04@gmail.com</email></corresp>
+      </author-notes>
+      <pub-date pub-type="nihms-submitted">
+        <day>11</day>
+        <month>3</month>
+        <year>2014</year>
+      </pub-date>
+      <pub-date pub-type="epub">
+        <day>14</day>
+        <month>9</month>
+        <year>2013</year>
+      </pub-date>
+      <pub-date pub-type="ppub">
+        <month>3</month>
+        <year>2014</year>
+      </pub-date>
+      <pub-date pub-type="pmc-release">
+        <day>21</day>
+        <month>3</month>
+        <year>2014</year>
+      </pub-date>
+      <volume>63</volume>
+      <issue>3</issue>
+      <fpage>320</fpage>
+      <lpage>328</lpage>
+      <!--elocation-id from pubmed: 10.1016/j.annemergmed.2013.08.019-->
+      <permissions>
+        <copyright-statement>Copyright &#xA9; 2013 by the American College of Emergency Physicians.</copyright-statement>
+        <copyright-year>2013</copyright-year>
+      </permissions>
+      <abstract>
+        <sec id="S1">
+          <title>Study objective</title>
+          <p id="P1">Little is known about the transient and sustained operational effects of electronic health records on emergency department (ED) performance. We quantify how the implementation of a comprehensive electronic health record was associated with metrics of operational performance, test ordering, and medication administration at a single-center ED.</p>
+        </sec>
+        <sec id="S2">
+          <title>Methods</title>
+          <p id="P2">We performed a longitudinal analysis of electronic data from a single, suburban, academic ED during 28 weeks between May 2011 and November 2011. We assessed length of stay, use of diagnostic testing, medication administration, radiologic imaging, and patient satisfaction during a 4-week baseline measurement period and then tracked changes in these variables during the 24 weeks after implementation of the electronic health record.</p>
+        </sec>
+        <sec id="S3">
+          <title>Results</title>
+          <p id="P3">Median length of stay increased and patient satisfaction was reduced transiently, returning to baseline after 4 to 8 weeks. Rates of laboratory testing, medication administration, overall radiologic imaging, radiographs, computed tomography scans, and ECG ordering all showed sustained increases throughout the 24 weeks after electronic health record implementation.</p>
+        </sec>
+        <sec id="S4">
+          <title>Conclusion</title>
+          <p id="P4">Electronic health record implementation in this single-center study was associated with both transient and sustained changes in metrics of ED performance, as well as laboratory and medication ordering. Understanding ways in which an ED can be affected by electronic health record implementation is critical to providing insight about ways to mitigate transient disruption and to maximize potential benefits of the technology.</p>
+        </sec>
+      </abstract>
+    </article-meta>
+  </front>
+</article>
+<article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" article-type="review-article">
+  <?properties open_access?>
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">J Res Med Sci</journal-id>
+      <journal-id journal-id-type="iso-abbrev">J Res Med Sci</journal-id>
+      <journal-id journal-id-type="publisher-id">JRMS</journal-id>
+      <journal-title-group>
+        <journal-title>Journal of Research in Medical Sciences : The Official Journal of Isfahan University of Medical Sciences</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">1735-1995</issn>
+      <issn pub-type="epub">1735-7136</issn>
+      <publisher>
+        <publisher-name>Medknow Publications &amp; Media Pvt Ltd</publisher-name>
+        <publisher-loc>India</publisher-loc>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="pmid">24672566</article-id>
+      <article-id pub-id-type="pmc">3963324</article-id>
+      <article-id pub-id-type="publisher-id">JRMS-19-57</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Systematic Review Article</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Utilization of open source electronic health record around the world: A systematic review</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Aminpour</surname>
+            <given-names>Farzaneh</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1"/>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Sadoughi</surname>
+            <given-names>Farahnaz</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff2">1</xref>
+          <xref ref-type="corresp" rid="cor1"/>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Ahamdi</surname>
+            <given-names>Maryam</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff2">1</xref>
+        </contrib>
+      </contrib-group>
+      <aff id="aff1">Department of Health Information Management, School of Health Management and Information Sciences, Iran University of Medical Sciences, Tehran, Iran</aff>
+      <aff id="aff2"><label>1</label>Department of Health Information Management, School of Health Management and Information Sciences, Iran University of Medical Sciences, Tehran, Iran</aff>
+      <author-notes>
+        <corresp id="cor1"><bold>Address for correspondence:</bold> Dr. Farahnaz Sadoughi, Department of Health Information Management, School of Health Management and Information Sciences, Iran University of Medical Sciences, Tehran, Iran. E-mail: <email xlink:href="f-sadoughi@tums.ac.ir">f-sadoughi@tums.ac.ir</email></corresp>
+      </author-notes>
+      <pub-date pub-type="ppub">
+        <month>1</month>
+        <year>2014</year>
+      </pub-date>
+      <volume>19</volume>
+      <issue>1</issue>
+      <fpage>57</fpage>
+      <lpage>64</lpage>
+      <history>
+        <date date-type="received">
+          <day>06</day>
+          <month>5</month>
+          <year>2013</year>
+        </date>
+        <date date-type="rev-recd">
+          <day>30</day>
+          <month>5</month>
+          <year>2013</year>
+        </date>
+        <date date-type="accepted">
+          <day>05</day>
+          <month>6</month>
+          <year>2013</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>Copyright: &#xA9; Journal of Research in Medical Sciences</copyright-statement>
+        <copyright-year>2014</copyright-year>
+        <license license-type="open-access" xlink:href="http://creativecommons.org/licenses/by-nc-sa/3.0">
+          <license-p>This is an open-access article distributed under the terms of the Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p>
+        </license>
+      </permissions>
+      <abstract>
+        <p>Many projects on developing Electronic Health Record (EHR) systems have been carried out in many countries. The current study was conducted to review the published data on the utilization of open source EHR systems in different countries all over the world. Using free text and keyword search techniques, six bibliographic databases were searched for related articles. The identified papers were screened and reviewed during a string of stages for the irrelevancy and validity. The findings showed that open source EHRs have been wildly used by source limited regions in all continents, especially in Sub-Saharan Africa and South America. It would create opportunities to improve national healthcare level especially in developing countries with minimal financial resources. Open source technology is a solution to overcome the problems of high-costs and inflexibility associated with the proprietary health information systems.</p>
+      </abstract>
+      <kwd-group>
+        <kwd>Electronic health record</kwd>
+        <kwd>electronic medical record</kwd>
+        <kwd>healthcare</kwd>
+        <kwd>health information system</kwd>
+        <kwd>open source software</kwd>
+      </kwd-group>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="sec1-1">
+      <title>INTRODUCTION</title>
+      <p>Today with the vast development of technology in the world responding to the variable and complex needs for interchanging clinical information among health-care providers to improve the quality of health-care services seems more practical than any time before. Efficacy of healthcare services and medical interventions are highly dependent on a trust worthy and integrated history of individual medical and health status. Electronic health record (EHR) is one such response that covers the need of all engaged parties including patients, doctors, clinical staff, insurance companies, health care providers and policy makers. It provides a platform on which individual health information is stored and accessed only by authorized people. EHR is defined as digitally stored health-care information about an individual's life with the purpose of supporting continuity of care, education and research. Lack of the required health information causes a lot of delay and expenses in health-care delivery.[<xref rid="ref1" ref-type="bibr">1</xref>] EHR is a new way of storing and processing health information. A wide range of terms and phrases have been used to describe health and medical records. Health Insurance Portability and Accountability Act (HIPAA) defines EHR as &#x201C;an electronic record of health-related information on an individual that is created, gathered, managed and consulted by authorized health-care clinicians and staff.&#x201D;[<xref rid="ref2" ref-type="bibr">2</xref>] The terms &#x201C;Electronic Medical Record,&#x201D; (EMR) Computer-based Patient Record (CPR), Electronic Patient Record (EPR), Personal Health Record (PHR), Computerized Medical Record (CMR) may also be treated synonymously with EHR.</p>
+    </sec>
+    <sec id="sec1-2">
+      <title>OPEN SOURCE SOFTWARE (OSS)</title>
+      <p>In terms of software development and licensing, OSS and proprietary software are two main categories of software.[<xref rid="ref3" ref-type="bibr">3</xref>] &#x201C;The promise of opensource is better quality, higher reliability, more flexibility, lower cost and an end to predatory vendor lock-in.&#x201D;[<xref rid="ref4" ref-type="bibr">4</xref>] OSS encourages having access to the source code &#x2014; the code computer programmers write-with the freedom of usage, modification and redistribution. On the contrary, he source code in proprietary software is confidential. The end user of such products can access and execute only the machine code.[<xref rid="ref3" ref-type="bibr">3</xref>] The source code of proprietary software is closed and belongs only to the developer. The intention of developing this kind of software is to make a profit from licensing, rental or sale of the software and maintain full control of the product.[<xref rid="ref5" ref-type="bibr">5</xref>]</p>
+      <p>Although OSS and &#x201C;free software&#x201D; describe almost the same category of software, they stand for views based on different values. Free software respects freedom to run the software to study and change it and also to redistribute copies with or without changes. The free software movement begins in 1983. In 1984, the free operating system GNU was developed.[<xref rid="ref6" ref-type="bibr">6</xref>] GNU General Public License (GPL) is a free, copy left license for software, which is intended to guarantee the freedom to share and change all versions of software to make sure it remains free for all its users.[<xref rid="ref7" ref-type="bibr">7</xref>] As some of the users and developers of free software were not agreed with the goals of the free software movement, a part of the free software community separated in 1998 and began to campaign in the name of &#x201C;open source&#x201D; afterward. Open source is based only on practical values, such as making or having powerful and reliable software.[<xref rid="ref6" ref-type="bibr">6</xref>] Open Source Software (OSS), Free and Open Source Software (FOSS) and Free, Libre and Open Source Software (FLOSS)- although are not exactly the same- are alternative terms for free software.</p>
+      <p>In the health sector, open source products have been designed to improve health-care while reducing the cost of similar proprietary products. According to Reynolds and Wyatt, it creates &#x201C;a key opportunity for the promotion of effective systems by enhancing clinical engagement in software development, fostering innovation, improving system usability and reducing costs and should therefore be central to a rational HIS [Healthcare Information System] procurement strategy.&#x201D;[<xref rid="ref3" ref-type="bibr">3</xref>] A handful of projects on developing EHR systems have been carried out in many countries.</p>
+      <sec id="sec2-1">
+        <title>EHR in USA</title>
+        <p>In the United States of America, approximately 23.9% of physicians used EHR in the ambulatory setting and only 5%of hospitals used Computerized Physician Order Entry (CPOE) through 2005.[<xref rid="ref8" ref-type="bibr">8</xref>] A study on the levels of EHR adoption in USA revealed that only few US hospitals had a comprehensive electronic clinical information system and many others only had parts of an electronic records system. It seems that financial support, interoperability and training of information technology support staff by policy makers is necessary for increasing the application of EHR in US hospitals.[<xref rid="ref9" ref-type="bibr">9</xref>] Since the late 1970s, U.S. Department of Veterans Affairs (VA) as a governmental sector advanced their efforts to develop an extensive organizational health information system named veterans&#x2019; health information systems and technology architecture (VistA). VistA uses Massachusetts general hospital utility multi-programming system (MUMPS) a program that can be used for disease case registries.[<xref rid="ref10" ref-type="bibr">10</xref>] Only a few major organizations in the private sector worked on the implementation of EHRs in USA.[<xref rid="ref11" ref-type="bibr">11</xref>]</p>
+      </sec>
+      <sec id="sec2-2">
+        <title>EHR in Canada</title>
+        <p>Canada is another country, which seeks technological solutions to expand high quality health-care services across the country. These solutions also create new challenges, especially in acceptable standards, choice of technologies, overcoming traditional jurisdictional boundaries, privacy and confidentiality.[<xref rid="ref12" ref-type="bibr">12</xref>] Many projects were planned to develop an efficient EHR in Canada. Health Infoway is among such efforts. Canada Health Infoway is a non-profit corporation founded by the federal government of Canadian 2000. The initial aim of this organization was to accelerate the development of EHR on a pan-Canadian basis by 2007. It tries to connect organizations, which are working on EHR projects and encourage them to produce and share &#x201C;knowledge objects,&#x201D; which can be reused by other organizations. Canada Health Infoway is a major investment for Canadians with 1.1 billion dollar budget.[<xref rid="ref13" ref-type="bibr">13</xref>] This would support more efficient health-care delivery, patient confidentiality, immediate access to complete and accurate patient information while enabling better decisions about diagnosis and treatment. The final result would be a sustainable health-care system with higher quality, accessibility, productivity and cost savings.[<xref rid="ref6" ref-type="bibr">6</xref>]</p>
+      </sec>
+      <sec id="sec2-3">
+        <title>EHR in England</title>
+        <p>In England, National Program for Information Technology, which is directed by the National Health Service (NHS) is responsible for delivering England's EHR.[<xref rid="ref14" ref-type="bibr">14</xref>] NHS established an EHR system in 2005. The aim was to provide all 50 million NHS patients with an individual electronic NHS Care Record Service (NHSCRS) by 2010. The NHSCRS would securely share the detailed records of each person between different parts of the local NHS sites. The system uses a unique identifier for each patient. Patients would be able to have a summary of their important health information, known as their Summary Care Record (SCR), available to authorized NHS staff anywhere in the NHS in England. They also would access their SCR using a secure website named as &#x201C;HealthSpace.&#x201D; The budget of this project was estimated 12.6 billion Pounds in 2006. This was almost 2 times more than what was estimated since the project was first launched. It was assumed that the project may finally cost more than 20 billion pounds.[<xref rid="ref15" ref-type="bibr">15</xref>]</p>
+      </sec>
+      <sec id="sec2-4">
+        <title>EHR in Australia</title>
+        <p>Many regional and national EHR projects and systems have been developed in the Asia-Pacific region.[<xref rid="ref16" ref-type="bibr">16</xref>] In Australia as the pioneer of EHRs, Health Information Technology (HIT) is considered the basis for improving the quality of healthcare, safety and efficiency by the government. General practices were encouraged to install clinical software packages for prescribing and transmission of clinical data in the late 1990s.[<xref rid="ref17" ref-type="bibr">17</xref>] HealthConnect is a joint Australian, State and Territory Governments&#x2019; initiative for revolving paper-based health records to EHRs for the benefit of consumers and also health-care providers. Through which, health information would be more quickly available and transferred among healthcare professionals under more secure condition. The main aims of this program was the accessibility of life-saving information in emergencies and also the improvement of safety and quality of health information through a shared electronic health record (SEHR).[<xref rid="ref18" ref-type="bibr">18</xref>] The National E-Health Transition Authority (NEHTA) is responsible for developing a design for SEHR. NEHTA was funded jointly by the Australian, state and territory governments in 2005 to develop national standards and infrastructure for EHR across Australia.[<xref rid="ref19" ref-type="bibr">19</xref>]</p>
+        <p>Many studies focused on the benefits of using the OSS in the health sector.[<xref rid="ref20" ref-type="bibr">20</xref><xref rid="ref21" ref-type="bibr">21</xref><xref rid="ref22" ref-type="bibr">22</xref><xref rid="ref23" ref-type="bibr">23</xref><xref rid="ref24" ref-type="bibr">24</xref><xref rid="ref25" ref-type="bibr">25</xref><xref rid="ref26" ref-type="bibr">26</xref><xref rid="ref27" ref-type="bibr">27</xref><xref rid="ref28" ref-type="bibr">28</xref><xref rid="ref29" ref-type="bibr">29</xref><xref rid="ref30" ref-type="bibr">30</xref>] In a number of researches, the characteristics of OSS systems have been compared with each other.[<xref rid="ref31" ref-type="bibr">31</xref><xref rid="ref32" ref-type="bibr">32</xref>] During the recent years, utilization of OSS in national health systems has been welcomed by many countries to respond to the necessity of EHR systems for improving the health-care services and the problems of implementing proprietary EHR systems.</p>
+        <p>The present study was conducted to review the published data on the utilization of open source EHR systems in different countries all over the world and the primary reasons for utilization of those systems highlighted by published studies.</p>
+      </sec>
+    </sec>
+    <sec sec-type="methods" id="sec1-3">
+      <title>METHODS</title>
+      <p>A systematic review of studies on the utilization of open source EHR was developed through the following stages:</p>
+      <sec id="sec2-5">
+        <title>Eligibility criteria</title>
+        <p>All indexed original and review articles, short communications, case reports and scientific letters by selected bibliographic databases on the utilization of open source EHR in any country were eligible in this study.</p>
+      </sec>
+      <sec id="sec2-6">
+        <title>Data sources</title>
+        <p>Six bibliographic databases including Ovid Medline, ISI Web of Science, Scopus, Excerpta Medica Database (EMBASE), Cumulative Index to Nursing and Allied Health Literature (CINAHL), Library Information Science and Technology Abstracts (LISTA) were searched for relevant articles.</p>
+      </sec>
+      <sec id="sec2-7">
+        <title>Search strategy</title>
+        <p>We searched all six databases using free-text and subject-keyword search techniques for relevant studies according to the search tools of each database. The selected keywords were &#x201C;electronic health record,&#x201D; &#x201C;electronic medical record,&#x201D; &#x201C;computerized medical record&#x201D;,&#x201D; &#x201C;computer based medical record,&#x201D; &#x201C;computerized patient record&#x201D; &#x201C;computer based patient record,&#x201D; &#x201C;electronic patient record,&#x201D; &#x201C;personal health record&#x201D; and &#x201C;open source.&#x201D; We limited the search results to original and review articles, short communications, case reports and scientific letters published from 1990 up to 2012.</p>
+      </sec>
+      <sec id="sec2-8">
+        <title>Screening and selection</title>
+        <p>Primary selection of studies was based on the inclusion criteria, which were original and review articles, short communications, case reports and scientific letters on the utilization of open source EHR in any country. The duplicated publications were excluded. At the first screening stage, two reviewers (FA andFS) independently screened title and abstract of retrieved documents to determine those which met the eligibility criteria. Full citations of those documents considered eligible at least by one reviewer were imported into an EndNote database. In the next stage, the full text of the imported papers were provided and reviewed for subject relevancy individually by each of the two reviewers. A critical appraisal check list was used to evaluate the validity of the selected studies and to criticize them.[<xref rid="ref33" ref-type="bibr">33</xref>] Finally, the two reviewers made a face-to-face meeting, discussing on papers selections. Discrepancies were resolved through discussion. In the cases, which consensus did not happen, a third reviewer (MA) made the final decision on the eligibility of a particular paper. Consequently, those papers, which have been considered as valid by both reviewers, selected for data extraction.</p>
+      </sec>
+      <sec id="sec2-9">
+        <title>Data extraction</title>
+        <p>A list of eligible studies was produced. Also, a specific questionnaire for data extraction was designed for recording data from the selected studies. The extracted data were the author`s name, year of publication, the source title, the open source EHR system/systems, country/countries of utilization and the primary reasons for open source EHR utilization in selected studies.</p>
+      </sec>
+    </sec>
+    <sec sec-type="results" id="sec1-4">
+      <title>RESULTS</title>
+      <p>A total of 183 papers were identified by searching six bibliographic databases. The 99 duplicated publications were excluded. After screening, the title and abstract of the retrieved documents, 51 irrelevant papers were excluded and 33 studies were considered for full text evaluation. Then the full texts of selected papers were obtained and evaluated from which 17 papers were selected for inclusion in the review.[<xref rid="ref32" ref-type="bibr">32</xref><xref rid="ref34" ref-type="bibr">34</xref><xref rid="ref35" ref-type="bibr">35</xref><xref rid="ref36" ref-type="bibr">36</xref><xref rid="ref37" ref-type="bibr">37</xref><xref rid="ref38" ref-type="bibr">38</xref><xref rid="ref39" ref-type="bibr">39</xref><xref rid="ref40" ref-type="bibr">40</xref><xref rid="ref41" ref-type="bibr">41</xref><xref rid="ref42" ref-type="bibr">42</xref><xref rid="ref43" ref-type="bibr">43</xref><xref rid="ref44" ref-type="bibr">44</xref><xref rid="ref45" ref-type="bibr">45</xref><xref rid="ref46" ref-type="bibr">46</xref><xref rid="ref47" ref-type="bibr">47</xref><xref rid="ref48" ref-type="bibr">48</xref><xref rid="ref49" ref-type="bibr">49</xref>] The flow chart of the process of study selection is shown in <xref ref-type="fig" rid="F1">Figure 1</xref>.</p>
+      <fig id="F1" position="float">
+        <label>Figure 1</label>
+        <caption>
+          <p>Flow chart of study selection</p>
+        </caption>
+        <graphic xlink:href="JRMS-19-57-g001"/>
+      </fig>
+      <p>The excluded studies were not original article, review, case report or scientific letter or did not related to the utilization of a specific open source EHR in a specific country. The included studies are introduced in <xref ref-type="table" rid="T1">Table 1</xref>.</p>
+      <table-wrap id="T1" position="float">
+        <label>Table 1</label>
+        <caption>
+          <p>Included studies</p>
+        </caption>
+        <graphic xlink:href="JRMS-19-57-g002"/>
+      </table-wrap>
+      <p>The Academic Model Providing Access to Healthcare (AMPATH) Medical Record System (AMRS), Androbase, HospitalOS, iSante, iTrust, OpenEHR, OpenMRS, OpenVistA, Oopen Source Cluster Application Resources (OSCAR), One Stop Crisis Centre (OSCC) portal, Personal Internetworked Notary and Guardian (PING), PropeRWeb and WorldVistA. <xref ref-type="table" rid="T2">Table 2</xref> shows the characteristics of the 13 identified open source EHRs. It represents the country/countries of utilization and the primary reason/reasons for utilization of systems identified by reviewing the selected documents.</p>
+      <table-wrap id="T2" position="float">
+        <label>Table 2</label>
+        <caption>
+          <p>Characteristics of identified open source electronic health record systems</p>
+        </caption>
+        <graphic xlink:href="JRMS-19-57-g003"/>
+      </table-wrap>
+      <sec id="sec2-10">
+        <title>AMRS</title>
+        <p>AMRS is an implementation of Open MRS. AMRS is an open source medical record system developed by the AMPATH informatics team at the AMPATH center in Eldoret, to manage clinical care of human immunodeficiency virus (HIV) infected patients. AMRS is composed of paper-based records as well as EMRs because most clinicians in resource limited settings cannot use computers directly during patient visits. The system collects discrete data from clinical encounters at AMPATH including demographic data, symptoms, vital signs, physical exam findings, test results, diagnoses and treatments. All data are stored as coded concepts to allow easy retrieval and analysis. The system strongly emphasizes on data reuses to support patient care. AMRS is securely accessible via the internet with proper authorization</p>
+      </sec>
+      <sec id="sec2-11">
+        <title>Androbase</title>
+        <p>Androbase is a new EPR and database based on open source technology (MySQL database and PHP language), which is established in a university clinic in Germany. Androbase was developed mainly because the lack of adaptability and extensibility of the previous commercially protected system to specific needs and its poor response times during daily work made it unacceptable by users. Utilization of Androbase reduced workload and increased performance through eliminating transcription steps and decreasing time for data entry.</p>
+      </sec>
+      <sec id="sec2-12">
+        <title>Hospital OS</title>
+        <p>Hospital OS is an open source EMR system developed by Open Source Technology Co., Ltd. located in Phuket, Thailand. Hospital OS is user-friendly software released under a GNU GPL in 2001. The system developed by a team of programmers, software engineers, healthcare professionals and hospital experts to improve the quality of healthcare services in Thailand`s hospitals at no cost. Hospitals can use and customize the software to suit their particular needs and also share the software to other hospitals. Hospital data reporting and filing is streamlined in Hospital OS. It can save time and cost in health-care management. Nowadays, the system is demanded by many countries around the world.</p>
+      </sec>
+      <sec id="sec2-13">
+        <title>iSante</title>
+        <p>iSant&#xE9; is free open source EMR system developed to improve clinical care of HIV-infected patients in Haiti. The system is available in French and English. iSant&#xE9; can provide and send aggregated data for national reporting.</p>
+      </sec>
+      <sec id="sec2-14">
+        <title>iTrust</title>
+        <p>iTrust is an open source EHR system, which was founded as a project in a software engineering course at North Carolina State University to teach various automatic testing techniques. The system enjoyed the consultation of a practicing physician and a professional from the North Carolina Healthcare Information and Communications Alliance (NCHICA). iTrust is a patient-centered system. Patients can login to the system and do a variety of tasks. It allows patients to access to their own medical records, select their care giver and also communicate with their doctors. Any access and change into a specific medical record can be reported to patient through e-mail alerts. Some of functionalities of iTrust include appointment scheduling, physician order entry, prescribing medication, billing, ordering laboratory tests and viewing lab results.</p>
+      </sec>
+      <sec id="sec2-15">
+        <title>OpenEHR</title>
+        <p>OpenEHR is founded by the OpenEHR Foundation, which is a not-for-profit company. It is initiated as a mutual project by University College London, UK and Ocean Informatics Pty Ltd, Australia. The main focus of the openEHR Foundation is EPRs. OpenEHR is about life-long interoperable EHRs to improve the quality of health-care and research. One of the features of openEHR is developing publicly available structures and terminologies in a repository known as the Clinical Knowledge Manager (CKM). As an online clinical knowledge resource, the OpenEHR CKM allows users to participate in the creation an international set of archetypes, which could enhance interoperability of the whole system. OpenEHR enables clinicians to manage clinical content separately from the software through the archetype formalism. Now, it is used in a number of countries around the world.</p>
+      </sec>
+      <sec id="sec2-16">
+        <title>OpenMRS</title>
+        <p>OpenMRS is an open source EMR system developed by a large network of open source developers coordinated by the Regenstrief Institutein 2004. The system was implemented initially in Kenya and then was rapidly adopted by health-care organizations in resource poor countries. OpenMRS has a concept dictionary in its core, which stores total diagnosis, tests, drugs and also general questions and potential answers. It has been used in several African countries including South Africa, Ethiopia, Mali, Ghana, Nigeria, Kenya, Rwanda, Malawi, Senegal, Tanzania, Uganda, Lesotho, Zimbabwe, Mozambique, Sierra Leone and Haiti. Nowadays, it is wildly used throughout the world.</p>
+      </sec>
+      <sec id="sec2-17">
+        <title>OpenVistA</title>
+        <p>OpenVistA is a non-proprietary, open source EHR system based on the VA VistA software. OpenVistA reduces the expenses by allowing VistA to run on the Linux operating system, which is open source and free. It also enables the client organizations to run the system also on Windows. They can choose either InterSystems Cach&#xE9; or Fidelity GT.Ml. OpenVistA allows multiple clinicians to simultaneously access to various patient data in real-time. The system provides progress note, various templates, ordering and reporting tools, audit capabilities, electronic signature. Document management, data integration tools and CPOE are among other features of OpenVistA.</p>
+      </sec>
+      <sec id="sec2-18">
+        <title>OSCAR</title>
+        <p>OSCAR is an open source EHR system developed by Department of Family Medicine at McMaster University, Canada. OSCAR is based on Linux and MySQL database and uses the GPL. The system allows users to install a high performance computing cluster. Multiple message passing interface implementations could be install on one cluster. OSCAR`s functionalities include various services such as registration, scheduling, medical record and billing. Moreover, it includes a powerful testing architecture for ensuring the readiness of the cluster set up for production.</p>
+      </sec>
+      <sec id="sec2-19">
+        <title>OSCC Portal</title>
+        <p>The OSCC Portal is an open source web-based EPR system, which is developed for OSCC, Hospital University Sains Malaysia (HUSM) in Kelantan, Malaysia. Utilization of OSCC Portal improved data confidentiality; data integration; communication, coordination between disciplines; standardization of data; quality assessment; and research in HUSM, which are all necessary for quality of care.</p>
+      </sec>
+      <sec id="sec2-20">
+        <title>PING</title>
+        <p>PING is a free and open source health information system. It is designed and implemented as an interoperable, personally controlled health record, which enables patients to have control accessibility to their medical information by others. PING architecture is based on replaceable modular pieces so that collaborators can add to or substitute in PING components. PING compiles lifelong patient history and allows patients to store encrypted copies of their records in selective storage sites. PING is adopted by the Canadian National Research as a model for regional, provincial and national personally controlled health records.</p>
+      </sec>
+      <sec id="sec2-21">
+        <title>PropeRWeb</title>
+        <p>PropeRWeb is a multidisciplinary EHR system, which is built based on open standards in Netherlands. As a web based application, the system uses servlets and Java Server Pages with CORBA connection to the database servers. In PropeRWeb, patients and care givers are separated into two different Person Identification Specification (PIDS) servers to enhance security and privacy. Auditing as a functionality that provides info at a specific moment is implemented in PropeRWeb by distinguishing between versions of archetypes and forms. Although some aspects such as user friendliness need more improvements; however, the system is flexible enough to be readily customized for use in a variety of clinical domains.</p>
+      </sec>
+      <sec id="sec2-22">
+        <title>WorldVistA</title>
+        <p>WorldVistA is an open source EHR system that evolved from VistA project to make it widely available outside of its original setting within the United States and around the world. The system developed additional modules such as pediatrics, obstetrics and patient billing not normally used in the veteran's health-care setting. WorldVistA is able to run on proprietary intersystem cache database. Web-based and client-server configurations can be established on the system depending on the environment. Although it is a primary care system, but other templates for specialties can be created by users. WorldVistA has various functionalities including patient registration, drug allergy and interaction checking, creating health maintenance remainders, clinical order entry, templates for obstetrics/gynecology and pediatrics care, viewing lab and imaging results and generating reports of demographics, medications and problems.</p>
+      </sec>
+    </sec>
+    <sec sec-type="discussion" id="sec1-5">
+      <title>DISCUSSION</title>
+      <p>EHR provides brilliant chance of readily retrieving the required information for conducting a faster and a much more accurate decision for action. Decline in medical errors is another important advantage of applying EHR that should seriously be taken into account.[<xref rid="ref1" ref-type="bibr">1</xref>] Open source EHRs have been designed to improve health-care while reducing the cost of similar proprietary systems. Those who developed OSS actually encourage it and rely on this philosophy to see the software spread and grow beyond its original creators.[<xref rid="ref4" ref-type="bibr">4</xref>] According to the findings, open source EHR systems have been wildly welcomed by source limited regions around the world, especially in Sub-Saharan Africa and South America. Argentina, Australia, Chile, Ecuador, Ethiopia, Germany, Ghana, Haiti, Jordan, Kenya, Lesotho, Malawi, Malaysia, Mali, Mexico, Mozambique, Netherlands, Nigeria, Pakistan, Peru, Rwanda, Senegal, Sierra Leone, South Africa, Sweden, Tanzania, Thailand, Turkey, Uganda, USA and Zimbabwe are among countries, which used open source EHRs to enhance the health care quality. The results indicated that many countries especially developing countries- demand to use an interoperable and cost-efficient EHR system, which is flexible enough to modify and improve.</p>
+      <p>Commercial software companies and some people claim that open source systems cannot fulfil medicolegal and security requirements required for a health-care system and may allow hackers to know the software bugs more easily than proprietary software.[<xref rid="ref50" ref-type="bibr">50</xref>] However, some experts believe that open source systems are more secure from external attack than closed source systems because the independent assessment of system security, which happens in OSS &#x201C;makes bug patching easier and more likely and forces developers to spend more effort on the quality of their code.&#x201D;[<xref rid="ref49" ref-type="bibr">49</xref>] Active assessment of software codes by their users makes them more stable than proprietary systems. On the other hand, because of commercial pressures customers&#x2019; requirements are more important for proprietary software developers than security requirements, which are invisible to customers.[<xref rid="ref51" ref-type="bibr">51</xref>]</p>
+      <p>Open source systems make opportunities for advanced innovation in the health information sector of low income countries.[<xref rid="ref49" ref-type="bibr">49</xref>] However, cost- efficiency seems to be the most important reason for utilization of open source systems in many countries. Despite the enormous financial investment to Canada Health Infoway, some believes that the reduction in duplicated efforts will reduce the total expenses of a pan-Canadian EHR.[<xref rid="ref13" ref-type="bibr">13</xref>] Some critics said that spending billions of dollars in purchasing health software would lead to enormous overpayments to technology companies and consultants. Such a huge investment on a national health information structure encourages a competition between companies for profitable deals to sell their electronic health systems promising to connect patients, doctors and hospitals. They believe that OSS would be a better solution instead of spending too much money on expensive proprietary products.[<xref rid="ref52" ref-type="bibr">52</xref>] The open three (O3) consortium project launched in 2004 is an example of utilization of OSS, which was based on the agreements on the impact of open solutions in facilitating fast integration of health systems in Europe and the world.[<xref rid="ref22" ref-type="bibr">22</xref>] Even, in the USA some of the current EHR systems are not fully desirable because of being expensive and inflexible and proprietary. Open source systems with the potentiality for local customization could be a possible solution to solve these problems and to improve health-care services in the United States as they have done in many other countries around the world.[<xref rid="ref28" ref-type="bibr">28</xref>] The evidences indicated that utilization of OSS in the health sector is more welcomed in developing countries with financial limitations. Although various open source EHR programs may not fully encompass the functionality requirements for an ideal EHR system, they create opportunities to improve national health-care level in countries with minimal financial resources.[<xref rid="ref31" ref-type="bibr">31</xref>] Developing countries use open source EHRs to lower cost and to improve the efficiency and quality of health-care services. The overall results indicated that open source EHR is a solution to overcome the problems of high costs and inflexibility associated with proprietary systems.</p>
+    </sec>
+    <sec sec-type="conclusion" id="sec1-6">
+      <title>CONCLUSION</title>
+      <p>Several projects on utilizing open source EHR in the world, especially in developing countries confirm the effective role of open source EHR systems in improving the healthcare level in countries with minimal financial resources.</p>
+    </sec>
+  </body>
+  <back>
+    <ack>
+      <title>ACKNOWLEDGMENT</title>
+      <p>This study was part of a PhD thesis supported by Iran University of Medical Sciences.</p>
+    </ack>
+    <fn-group>
+      <fn fn-type="supported-by">
+        <p><bold>Source of Support:</bold> Iran university of medical sciences</p>
+      </fn>
+      <fn fn-type="conflict">
+        <p><bold>Conflict of Interest:</bold> None declared</p>
+      </fn>
+    </fn-group>
+    <ref-list>
+      <title>REFERENCES</title>
+      <ref id="ref1">
+        <label>1</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Rezae</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Ahmadi</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Sadughi</surname>
+              <given-names>F</given-names>
+            </name>
+          </person-group>
+          <article-title>Comparative study on EHR content, structure, and terminology standards in selected organizations and design a model for Iran</article-title>
+          <source>J Health Adm</source>
+          <year>2007</year>
+          <volume>10</volume>
+          <fpage>55</fpage>
+          <lpage>64</lpage>
+        </element-citation>
+      </ref>
+      <ref id="ref2">
+        <label>2</label>
+        <element-citation publication-type="webpage">
+          <article-title>HIPPA. The Definition of Electronic Health Record</article-title>
+          <date-in-citation>Accessed on 2012 Sep 20</date-in-citation>
+          <comment>Available from: <uri xlink:type="simple" xlink:href="http://www.hipaa.com/2009/05/the-definition-of-electronic-health-record">http://www.hipaa.com/2009/05/the-definition-of-electronic-health-record</uri></comment>
+        </element-citation>
+      </ref>
+      <ref id="ref3">
+        <label>3</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Reynolds</surname>
+              <given-names>CJ</given-names>
+            </name>
+            <name>
+              <surname>Wyatt</surname>
+              <given-names>JC</given-names>
+            </name>
+          </person-group>
+          <article-title>Open source, open standards, and healthcare information systems</article-title>
+          <source>J Med Internet Res</source>
+          <year>2011</year>
+          <volume>13</volume>
+          <fpage>e24</fpage>
+          <pub-id pub-id-type="pmid">21447469</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref4">
+        <label>4</label>
+        <element-citation publication-type="webpage">
+          <article-title>Open Source initiatives</article-title>
+          <date-in-citation>Accessed on 2012 Dec 6</date-in-citation>
+          <comment>Available from: <uri xlink:type="simple" xlink:href="http://www.Opensource.org/docs/osd">http://www.Opensource.org/docs/osd</uri></comment>
+        </element-citation>
+      </ref>
+      <ref id="ref5">
+        <label>5</label>
+        <element-citation publication-type="book">
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Khelifi Adel</surname>
+              <given-names>AT</given-names>
+            </name>
+          </person-group>
+          <article-title>A preliminary open source software infrastructure for the health sector in the UAE</article-title>
+          <publisher-loc>Abu Dhabi, UAE</publisher-loc>
+          <publisher-name>European and Mediterranean Conference on Information Systems (EMCIS2010); 2010 April 12-13</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="ref6">
+        <label>6</label>
+        <element-citation publication-type="webpage">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Stallman</surname>
+              <given-names>R</given-names>
+            </name>
+          </person-group>
+          <article-title>Why open source misses the point of free software</article-title>
+          <date-in-citation>Accessed on 2012 Sep 20</date-in-citation>
+          <comment>Available from: <uri xlink:type="simple" xlink:href="http://www.gnu.org/philosophy/open-source-misses-the-point.html">http://www.gnu.org/philosophy/open-source-misses-the-point.html</uri></comment>
+        </element-citation>
+      </ref>
+      <ref id="ref7">
+        <label>7</label>
+        <element-citation publication-type="webpage">
+          <article-title>GNU General Public License</article-title>
+          <date-in-citation>Accessed on 2012 Sep 20</date-in-citation>
+          <comment>Available from: <uri xlink:type="simple" xlink:href="http://www.gnu.org/licenses/gpl.html">http://www.gnu.org/licenses/gpl.html</uri></comment>
+        </element-citation>
+      </ref>
+      <ref id="ref8">
+        <label>8</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Jha</surname>
+              <given-names>AK</given-names>
+            </name>
+            <name>
+              <surname>Ferris</surname>
+              <given-names>TG</given-names>
+            </name>
+            <name>
+              <surname>Donelan</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>DesRoches</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Shields</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Rosenbaum</surname>
+              <given-names>S</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>How common are electronic health records in the United States? A summary of the evidence</article-title>
+          <source>Health Aff (Millwood)</source>
+          <year>2006</year>
+          <volume>25</volume>
+          <fpage>w496</fpage>
+          <lpage>507</lpage>
+          <pub-id pub-id-type="pmid">17035341</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref9">
+        <label>9</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Jha</surname>
+              <given-names>AK</given-names>
+            </name>
+            <name>
+              <surname>DesRoches</surname>
+              <given-names>CM</given-names>
+            </name>
+            <name>
+              <surname>Campbell</surname>
+              <given-names>EG</given-names>
+            </name>
+            <name>
+              <surname>Donelan</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Rao</surname>
+              <given-names>SR</given-names>
+            </name>
+            <name>
+              <surname>Ferris</surname>
+              <given-names>TG</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>Use of electronic health records in U.S. hospitals</article-title>
+          <source>N Engl J Med</source>
+          <year>2009</year>
+          <volume>360</volume>
+          <fpage>1628</fpage>
+          <lpage>38</lpage>
+          <pub-id pub-id-type="pmid">19321858</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref10">
+        <label>10</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Greenbaum</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Sboner</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Mu</surname>
+              <given-names>XJ</given-names>
+            </name>
+            <name>
+              <surname>Gerstein</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <article-title>Genomics and privacy: Implications of the new reality of closed data for the field</article-title>
+          <source>PLoS Comput Biol</source>
+          <year>2011</year>
+          <volume>7</volume>
+          <fpage>e1002278</fpage>
+          <pub-id pub-id-type="pmid">22144881</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref11">
+        <label>11</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Berner</surname>
+              <given-names>ES</given-names>
+            </name>
+            <name>
+              <surname>Detmer</surname>
+              <given-names>DE</given-names>
+            </name>
+            <name>
+              <surname>Simborg</surname>
+              <given-names>D</given-names>
+            </name>
+          </person-group>
+          <article-title>Will the wave finally break? A brief view of the adoption of electronic medical records in the United States</article-title>
+          <source>J Am Med Inform Assoc</source>
+          <year>2005</year>
+          <volume>12</volume>
+          <fpage>3</fpage>
+          <lpage>7</lpage>
+          <pub-id pub-id-type="pmid">15492029</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref12">
+        <label>12</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Alvarez</surname>
+              <given-names>RC</given-names>
+            </name>
+          </person-group>
+          <article-title>The promise of e-health &#x2013; A Canadian perspective</article-title>
+          <source>World Hosp Health Serv</source>
+          <year>2004</year>
+          <volume>40</volume>
+          <fpage>31</fpage>
+          <lpage>5</lpage>
+          <pub-id pub-id-type="pmid">15751551</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref13">
+        <label>13</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Catz</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Bayne</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>
+          <article-title>Canada health infoway &#x2013; A pan-Canadian approach</article-title>
+          <source>AMIA Annu Symp Proc</source>
+          <year>2003</year>
+          <fpage>807</fpage>
+          <pub-id pub-id-type="pmid">14728312</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref14">
+        <label>14</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Huston</surname>
+              <given-names>JL</given-names>
+            </name>
+          </person-group>
+          <article-title>EHR in the UK: Shedding some light from a manager's perspective</article-title>
+          <source>Health Care Manag (Frederick)</source>
+          <year>2006</year>
+          <volume>25</volume>
+          <fpage>335</fpage>
+          <lpage>40</lpage>
+          <pub-id pub-id-type="pmid">17202960</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref15">
+        <label>15</label>
+        <element-citation publication-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nicholson</surname>
+              <given-names>L</given-names>
+            </name>
+          </person-group>
+          <article-title>Electronic Health Records in the United Kingdom of Great Britain Northern Ireland</article-title>
+          <year>2008</year>
+          <publisher-loc>Amsterdam</publisher-loc>
+          <publisher-name>EHR Conference</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="ref16">
+        <label>16</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kimura</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Croll</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Li</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Wong</surname>
+              <given-names>CP</given-names>
+            </name>
+            <name>
+              <surname>Gogia</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Faud</surname>
+              <given-names>A</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>Survey on medical records and EHR in Asia-Pacific region: Languages, purposes, IDs and regulations</article-title>
+          <source>Methods Inf Med</source>
+          <year>2011</year>
+          <volume>50</volume>
+          <fpage>386</fpage>
+          <lpage>91</lpage>
+          <pub-id pub-id-type="pmid">21792467</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref17">
+        <label>17</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>McInnes</surname>
+              <given-names>DK</given-names>
+            </name>
+            <name>
+              <surname>Saltman</surname>
+              <given-names>DC</given-names>
+            </name>
+            <name>
+              <surname>Kidd</surname>
+              <given-names>MR</given-names>
+            </name>
+          </person-group>
+          <article-title>General practitioners&#x2019; use of computers for prescribing and electronic health records: Results from a national survey</article-title>
+          <source>Med J Aust</source>
+          <year>2006</year>
+          <volume>185</volume>
+          <fpage>88</fpage>
+          <lpage>91</lpage>
+          <pub-id pub-id-type="pmid">16842064</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref18">
+        <label>18</label>
+        <element-citation publication-type="webpage">
+          <article-title>Health Connect</article-title>
+          <date-in-citation>Cited on 2012 Sep 09</date-in-citation>
+          <comment>Available from: <uri xlink:type="simple" xlink:href="http://www.health.gov.au/healthconnect">http://www.health.gov.au/healthconnect</uri></comment>
+        </element-citation>
+      </ref>
+      <ref id="ref19">
+        <label>19</label>
+        <element-citation publication-type="webpage">
+          <article-title>NEHTA- National E-Health Transition Authority</article-title>
+          <date-in-citation>Accessed on 2012 Sep 20</date-in-citation>
+          <comment>Available from: <uri xlink:type="simple" xlink:href="http://www.nehta.gov.au">http://www.nehta.gov.au</uri></comment>
+        </element-citation>
+      </ref>
+      <ref id="ref20">
+        <label>20</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bush</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>
+          <article-title>Open-source software: Just what the doctor ordered?</article-title>
+          <source>Fam Pract Manag</source>
+          <year>2003</year>
+          <volume>10</volume>
+          <fpage>65</fpage>
+          <comment>69</comment>
+          <pub-id pub-id-type="pmid">12852230</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref21">
+        <label>21</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>De Lusignan</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Kumarapeli</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Debar</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Kushniruk</surname>
+              <given-names>AW</given-names>
+            </name>
+            <name>
+              <surname>Pearce</surname>
+              <given-names>C</given-names>
+            </name>
+          </person-group>
+          <article-title>Using an open source observational tool to measure the influence of the doctor's consulting style and the computer system on the outcomes of the clinical consultation</article-title>
+          <source>Stud Health Technol Inform</source>
+          <year>2009</year>
+          <volume>150</volume>
+          <fpage>1017</fpage>
+          <lpage>21</lpage>
+          <pub-id pub-id-type="pmid">19745467</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref22">
+        <label>22</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Dinevski</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Poli</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Krajnc</surname>
+              <given-names>I</given-names>
+            </name>
+            <name>
+              <surname>Sustersic</surname>
+              <given-names>O</given-names>
+            </name>
+            <name>
+              <surname>Arh</surname>
+              <given-names>T</given-names>
+            </name>
+          </person-group>
+          <article-title>E-health integration and interoperability based on open-source information technology</article-title>
+          <source>Wien Klin Wochenschr</source>
+          <year>2010</year>
+          <volume>122</volume>
+          <issue>Suppl2</issue>
+          <fpage>3</fpage>
+          <lpage>10</lpage>
+          <pub-id pub-id-type="pmid">20517664</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref23">
+        <label>23</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Dove</surname>
+              <given-names>ES</given-names>
+            </name>
+            <name>
+              <surname>Ozdemir</surname>
+              <given-names>V</given-names>
+            </name>
+            <name>
+              <surname>Joly</surname>
+              <given-names>Y</given-names>
+            </name>
+          </person-group>
+          <article-title>Harnessing omics sciences, population databases, and open innovation models for theranostics-guided drug discovery and development</article-title>
+          <source>Drug Dev Res</source>
+          <year>2012</year>
+          <volume>73</volume>
+          <fpage>439</fpage>
+          <lpage>46</lpage>
+        </element-citation>
+      </ref>
+      <ref id="ref24">
+        <label>24</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gatta</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Abeni</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Buglione</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Peveri</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Barbera</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Tonoli</surname>
+              <given-names>S</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>Open-source, low-cost, high-reliability solutions for digital imaging systems: Example of a &#x201C;dicom router&#x201D;</article-title>
+          <source>Radiol Med</source>
+          <year>2007</year>
+          <volume>112</volume>
+          <fpage>1252</fpage>
+          <lpage>9</lpage>
+          <pub-id pub-id-type="pmid">18074196</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref25">
+        <label>25</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Good</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>DiTommaso</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <article-title>SQL Clinic: The open-source alternative for electronic medical records</article-title>
+          <source>Psychiatr Serv</source>
+          <year>2005</year>
+          <volume>56</volume>
+          <fpage>269</fpage>
+          <lpage>71</lpage>
+          <pub-id pub-id-type="pmid">15746500</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref26">
+        <label>26</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lee</surname>
+              <given-names>YH</given-names>
+            </name>
+          </person-group>
+          <article-title>Efficient radiologic reading environment by using an open-source macro programas connection software</article-title>
+          <source>Eur J Radiol</source>
+          <year>2012</year>
+          <volume>81</volume>
+          <fpage>100</fpage>
+          <lpage>3</lpage>
+          <pub-id pub-id-type="pmid">21163597</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref27">
+        <label>27</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Marques</surname>
+              <given-names>ET</given-names>
+              <suffix>Jr</suffix>
+            </name>
+            <name>
+              <surname>Maciel</surname>
+              <given-names>FilhoR</given-names>
+            </name>
+            <name>
+              <surname>August</surname>
+              <given-names>PN</given-names>
+            </name>
+          </person-group>
+          <article-title>Overcoming health inequity: Potential benefits of apatient-centered open-source public health infostructure</article-title>
+          <source>Cad Saude Publica</source>
+          <year>2008</year>
+          <volume>24</volume>
+          <fpage>547</fpage>
+          <lpage>57</lpage>
+          <pub-id pub-id-type="pmid">18327442</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref28">
+        <label>28</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Yellowlees</surname>
+              <given-names>PM</given-names>
+            </name>
+            <name>
+              <surname>Marks</surname>
+              <given-names>SL</given-names>
+            </name>
+            <name>
+              <surname>Hogarth</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Turner</surname>
+              <given-names>S</given-names>
+            </name>
+          </person-group>
+          <article-title>Standards-based, open source electronic health record systems: A desirable future for the U.S. health industry</article-title>
+          <source>Telemed J E Health</source>
+          <year>2008</year>
+          <volume>14</volume>
+          <fpage>284</fpage>
+          <lpage>8</lpage>
+          <pub-id pub-id-type="pmid">18570554</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref29">
+        <label>29</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kantor</surname>
+              <given-names>GS</given-names>
+            </name>
+            <name>
+              <surname>Wilson</surname>
+              <given-names>WD</given-names>
+            </name>
+            <name>
+              <surname>Midgley</surname>
+              <given-names>A</given-names>
+            </name>
+          </person-group>
+          <article-title>Open-source software and the primary care EMR</article-title>
+          <source>J Am Med Inform Assoc</source>
+          <year>2003</year>
+          <volume>10</volume>
+          <fpage>616</fpage>
+          <lpage>7</lpage>
+          <pub-id pub-id-type="pmid">12925540</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref30">
+        <label>30</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Los</surname>
+              <given-names>RK</given-names>
+            </name>
+            <name>
+              <surname>vanGinneken</surname>
+              <given-names>AM</given-names>
+            </name>
+            <name>
+              <surname>svanderLei</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>
+          <article-title>Open SDE: Astrategy for expressive and flexible structured data entry</article-title>
+          <source>Int J Med Inform</source>
+          <year>2005</year>
+          <volume>74</volume>
+          <fpage>481</fpage>
+          <lpage>90</lpage>
+          <pub-id pub-id-type="pmid">15890558</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref31">
+        <label>31</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Flores</surname>
+              <given-names>Zuniga AE</given-names>
+            </name>
+            <name>
+              <surname>Win</surname>
+              <given-names>KT</given-names>
+            </name>
+            <name>
+              <surname>Susilo</surname>
+              <given-names>W</given-names>
+            </name>
+          </person-group>
+          <article-title>Functionalities of free and open electronic health record systems</article-title>
+          <source>Int J Technol Assess Health Care</source>
+          <year>2010</year>
+          <volume>26</volume>
+          <fpage>382</fpage>
+          <lpage>9</lpage>
+          <pub-id pub-id-type="pmid">20974022</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref32">
+        <label>32</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Millard</surname>
+              <given-names>PS</given-names>
+            </name>
+            <name>
+              <surname>Bru</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Berger</surname>
+              <given-names>CA</given-names>
+            </name>
+          </person-group>
+          <article-title>Open-source point-of-care electronic medical records foruse inresource-limited settings: Systematic review and questionnaire surveys</article-title>
+          <source>BMJ Open</source>
+          <year>2012</year>
+          <volume>2</volume>
+          <fpage>e000690</fpage>
+        </element-citation>
+      </ref>
+      <ref id="ref33">
+        <label>33</label>
+        <element-citation publication-type="webpage">
+          <article-title>Critical Appraisal Skills Programme (CASP)</article-title>
+          <date-in-citation>Accessed on 2012 Dec 21</date-in-citation>
+          <comment>Available from: <uri xlink:type="simple" xlink:href="http://www.casp-uk.net">http://www.casp-uk.net</uri></comment>
+        </element-citation>
+      </ref>
+      <ref id="ref34">
+        <label>34</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Seebregts</surname>
+              <given-names>CJ</given-names>
+            </name>
+            <name>
+              <surname>Mamlin</surname>
+              <given-names>BW</given-names>
+            </name>
+            <name>
+              <surname>Biondich</surname>
+              <given-names>PG</given-names>
+            </name>
+            <name>
+              <surname>Fraser</surname>
+              <given-names>HS</given-names>
+            </name>
+            <name>
+              <surname>Wolfe</surname>
+              <given-names>BA</given-names>
+            </name>
+            <name>
+              <surname>Jazayeri</surname>
+              <given-names>D</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>The OpenMRS implementers network</article-title>
+          <source>Int J Med Inform</source>
+          <year>2009</year>
+          <volume>78</volume>
+          <fpage>711</fpage>
+          <lpage>20</lpage>
+          <pub-id pub-id-type="pmid">19157968</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref35">
+        <label>35</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Noormohammad</surname>
+              <given-names>SF</given-names>
+            </name>
+            <name>
+              <surname>Mamlin</surname>
+              <given-names>BW</given-names>
+            </name>
+            <name>
+              <surname>Biondich</surname>
+              <given-names>PG</given-names>
+            </name>
+            <name>
+              <surname>McKown</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Kimaiyo</surname>
+              <given-names>SN</given-names>
+            </name>
+            <name>
+              <surname>Were</surname>
+              <given-names>MC</given-names>
+            </name>
+          </person-group>
+          <article-title>Changing course to make clinical decision support work in an HIV clinic in Kenya</article-title>
+          <source>Int J Med Inform</source>
+          <year>2010</year>
+          <volume>79</volume>
+          <fpage>204</fpage>
+          <lpage>10</lpage>
+          <pub-id pub-id-type="pmid">20089444</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref36">
+        <label>36</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>T&#xFC;ttelmann</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Luetjens</surname>
+              <given-names>CM</given-names>
+            </name>
+            <name>
+              <surname>Nieschlag</surname>
+              <given-names>E</given-names>
+            </name>
+          </person-group>
+          <article-title>Optimising workflow in andrology: A new electronic patient record and database</article-title>
+          <source>Asian J Androl</source>
+          <year>2006</year>
+          <volume>8</volume>
+          <fpage>235</fpage>
+          <lpage>41</lpage>
+          <pub-id pub-id-type="pmid">16491277</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref37">
+        <label>37</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ohemeng-Dapaah</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Pronyk</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Akosa</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Nemser</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Kanter</surname>
+              <given-names>AS</given-names>
+            </name>
+          </person-group>
+          <article-title>Combining vital events registration, verbal autopsy and electronic medical records in rural Ghana for improved health services delivery</article-title>
+          <source>Stud Health Technol Inform</source>
+          <year>2010</year>
+          <volume>160</volume>
+          <fpage>416</fpage>
+          <lpage>20</lpage>
+          <pub-id pub-id-type="pmid">20841720</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref38">
+        <label>38</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Massey</surname>
+              <given-names>AK</given-names>
+            </name>
+            <name>
+              <surname>Otto</surname>
+              <given-names>PN</given-names>
+            </name>
+            <name>
+              <surname>Hayward</surname>
+              <given-names>LJ</given-names>
+            </name>
+            <name>
+              <surname>Ant&#xF3;n</surname>
+              <given-names>AI</given-names>
+            </name>
+          </person-group>
+          <article-title>Evaluating existing security and privacy requirements for legal compliance</article-title>
+          <source>Requir Eng</source>
+          <year>2010</year>
+          <volume>15</volume>
+          <fpage>119</fpage>
+          <lpage>37</lpage>
+        </element-citation>
+      </ref>
+      <ref id="ref39">
+        <label>39</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Waters</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Rafter</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Douglas</surname>
+              <given-names>GP</given-names>
+            </name>
+            <name>
+              <surname>Bwanali</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Jazayeri</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Fraser</surname>
+              <given-names>HS</given-names>
+            </name>
+          </person-group>
+          <article-title>Experience implementing a point-of-care electronic medical record system for primary care in Malawi</article-title>
+          <source>Stud Health Technol Inform</source>
+          <year>2010</year>
+          <volume>160</volume>
+          <fpage>96</fpage>
+          <lpage>100</lpage>
+          <pub-id pub-id-type="pmid">20841657</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref40">
+        <label>40</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Syed-Mohamad</surname>
+              <given-names>SM</given-names>
+            </name>
+            <name>
+              <surname>Ali</surname>
+              <given-names>SH</given-names>
+            </name>
+            <name>
+              <surname>Mat-Husin</surname>
+              <given-names>MN</given-names>
+            </name>
+          </person-group>
+          <article-title>The development and design of an electronic patient record using opens ource web-based technology</article-title>
+          <source>HIMJ</source>
+          <year>2010</year>
+          <volume>39</volume>
+          <fpage>30</fpage>
+          <lpage>5</lpage>
+          <pub-id pub-id-type="pmid">20335647</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref41">
+        <label>41</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Van der Linden</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Tange</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Talmon</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>
+          <article-title>PropeR and archetypes</article-title>
+          <source>Stud Health Technol Inform</source>
+          <year>2004</year>
+          <volume>110</volume>
+          <fpage>49</fpage>
+          <lpage>53</lpage>
+          <pub-id pub-id-type="pmid">15853251</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref42">
+        <label>42</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Van der Linden</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Talmon</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Tange</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Grimson</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Hasman</surname>
+              <given-names>A</given-names>
+            </name>
+          </person-group>
+          <article-title>PropeRrevisited</article-title>
+          <source>Int J Med Inform</source>
+          <year>2005</year>
+          <volume>74</volume>
+          <fpage>235</fpage>
+          <lpage>44</lpage>
+          <pub-id pub-id-type="pmid">15694630</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref43">
+        <label>43</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kanter</surname>
+              <given-names>AS</given-names>
+            </name>
+            <name>
+              <surname>Negin</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Olayo</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Bukachi</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Johnson</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Sachs</surname>
+              <given-names>SE</given-names>
+            </name>
+          </person-group>
+          <article-title>Millennium global village-net: Bringing together millennium villages throughout sub-Saharan Africa</article-title>
+          <source>Int J Med Inform</source>
+          <year>2009</year>
+          <volume>78</volume>
+          <fpage>802</fpage>
+          <lpage>7</lpage>
+          <pub-id pub-id-type="pmid">19766532</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref44">
+        <label>44</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Fraser</surname>
+              <given-names>HS</given-names>
+            </name>
+            <name>
+              <surname>Thomas</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Tomaylla</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Garcia</surname>
+              <given-names>N</given-names>
+            </name>
+            <name>
+              <surname>Lecca</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Murray</surname>
+              <given-names>M</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>Adaptation of a web-based, open source electronic medical record system platform to support a large study of tuberculosis epidemiology</article-title>
+          <source>BMC Med Inform Decis Mak</source>
+          <year>2012</year>
+          <volume>12</volume>
+          <fpage>125</fpage>
+          <pub-id pub-id-type="pmid">23131180</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref45">
+        <label>45</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kouematchoua</surname>
+              <given-names>Tchuitcheu G</given-names>
+            </name>
+            <name>
+              <surname>Rienhoff</surname>
+              <given-names>O</given-names>
+            </name>
+          </person-group>
+          <article-title>Options for diabetes management in sub-Saharan Africa with an electronic medical record system</article-title>
+          <source>Methods Inf Med</source>
+          <year>2011</year>
+          <volume>50</volume>
+          <fpage>11</fpage>
+          <lpage>22</lpage>
+          <pub-id pub-id-type="pmid">19936439</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref46">
+        <label>46</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Chen</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Klein</surname>
+              <given-names>G</given-names>
+            </name>
+          </person-group>
+          <article-title>The openEHR Java reference implementation project</article-title>
+          <source>Stud Health Technol Inform</source>
+          <year>2007</year>
+          <volume>129</volume>
+          <fpage>58</fpage>
+          <lpage>62</lpage>
+          <pub-id pub-id-type="pmid">17911678</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref47">
+        <label>47</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Yusuf</surname>
+              <given-names>EM</given-names>
+            </name>
+          </person-group>
+          <article-title>Implementation of OpenVistA in hospitals in Turkey</article-title>
+          <source>J Inf Technol Healthc</source>
+          <year>2008</year>
+          <volume>6</volume>
+          <fpage>212</fpage>
+          <lpage>20</lpage>
+        </element-citation>
+      </ref>
+      <ref id="ref48">
+        <label>48</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Simons</surname>
+              <given-names>WW</given-names>
+            </name>
+            <name>
+              <surname>Mandl</surname>
+              <given-names>KD</given-names>
+            </name>
+            <name>
+              <surname>Kohane</surname>
+              <given-names>IS</given-names>
+            </name>
+          </person-group>
+          <article-title>The PING personally controlled electronic medical record system: Technical architecture</article-title>
+          <source>J Am Med Inform Assoc</source>
+          <year>2005</year>
+          <volume>12</volume>
+          <fpage>47</fpage>
+          <lpage>54</lpage>
+          <pub-id pub-id-type="pmid">15492031</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref49">
+        <label>49</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Webster</surname>
+              <given-names>PC</given-names>
+            </name>
+          </person-group>
+          <article-title>The rise of open-source electronic health records</article-title>
+          <source>Lancet</source>
+          <year>2011</year>
+          <volume>377</volume>
+          <fpage>1641</fpage>
+          <lpage>2</lpage>
+          <pub-id pub-id-type="pmid">21591284</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ref50">
+        <label>50</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gallivan</surname>
+              <given-names>MJ</given-names>
+            </name>
+          </person-group>
+          <article-title>Striking a balance between trust and control in a virtual organization: A content analysis of open source software case studies</article-title>
+          <source>Inf Syst J</source>
+          <year>2001</year>
+          <volume>11</volume>
+          <fpage>277</fpage>
+          <lpage>304</lpage>
+        </element-citation>
+      </ref>
+      <ref id="ref51">
+        <label>51</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Payne</surname>
+              <given-names>C</given-names>
+            </name>
+          </person-group>
+          <article-title>On the security of open source software</article-title>
+          <source>Inf Syst J</source>
+          <year>2002</year>
+          <volume>12</volume>
+          <fpage>61</fpage>
+          <lpage>78</lpage>
+        </element-citation>
+      </ref>
+      <ref id="ref52">
+        <label>52</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Webster</surname>
+              <given-names>PC</given-names>
+            </name>
+          </person-group>
+          <article-title>Canada's ehealth software &#x201C;Tower of Babel&#x201D;</article-title>
+          <source>CMAJ</source>
+          <year>2010</year>
+          <volume>182</volume>
+          <fpage>1945</fpage>
+          <lpage>6</lpage>
+          <pub-id pub-id-type="pmid">21059781</pub-id>
+        </element-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
+<article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" article-type="research-article">
+  <!--The publisher of this article does not allow downloading of the full text in XML form.-->
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">Trans Am Ophthalmol Soc</journal-id>
+      <journal-id journal-id-type="iso-abbrev">Trans Am Ophthalmol Soc</journal-id>
+      <journal-id journal-id-type="publisher-id">7506106</journal-id>
+      <journal-title-group>
+        <journal-title>Transactions of the American Ophthalmological Society</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">0065-9533</issn>
+      <issn pub-type="epub">1545-6110</issn>
+      <publisher>
+        <publisher-name>The American Ophthalmological Society</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="pmid">24167326</article-id>
+      <article-id pub-id-type="pmc">3797873</article-id>
+      <article-id pub-id-type="publisher-id">1545-6110_v111_p070</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Articles</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Evaluation of Electronic Health Record Implementation in Ophthalmology at an Academic Medical Center (An American Ophthalmological Society Thesis)</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Chiang</surname>
+            <given-names>Michael F.</given-names>
+          </name>
+          <degrees>MD</degrees>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Read-Brown</surname>
+            <given-names>Sarah</given-names>
+          </name>
+          <degrees>BA</degrees>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Tu</surname>
+            <given-names>Daniel C.</given-names>
+          </name>
+          <degrees>MD PhD</degrees>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Choi</surname>
+            <given-names>Dongseok</given-names>
+          </name>
+          <degrees>PhD</degrees>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Sanders</surname>
+            <given-names>David S.</given-names>
+          </name>
+          <degrees>BS</degrees>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Hwang</surname>
+            <given-names>Thomas S.</given-names>
+          </name>
+          <degrees>MD</degrees>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Bailey</surname>
+            <given-names>Steven</given-names>
+          </name>
+          <degrees>MD</degrees>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Karr</surname>
+            <given-names>Daniel J.</given-names>
+          </name>
+          <degrees>MD</degrees>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Cottle</surname>
+            <given-names>Elizabeth</given-names>
+          </name>
+          <degrees>CPC OCS</degrees>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Morrison</surname>
+            <given-names>John C.</given-names>
+          </name>
+          <degrees>MD</degrees>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Wilson</surname>
+            <given-names>David J.</given-names>
+          </name>
+          <degrees>MD</degrees>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Yackel</surname>
+            <given-names>Thomas R.</given-names>
+          </name>
+          <degrees>MD</degrees>
+        </contrib>
+        <aff id="af1-1545-6110_v111_p070">From the Department of Ophthalmology, Casey Eye Institute, Oregon Health &amp; Science University, Portland (Dr Chiang, Ms Read-Brown, Dr Tu, Mr Sanders, Dr Choi, Dr Hwang, Dr Bailey, Dr Karr, Ms Cottle, Dr Morrison, Dr Wilson); Department of Medical Informatics &amp; Clinical Epidemiology, Oregon Health &amp; Science University, Portland (Dr Chiang, Dr Yackel); Operative Care Division, Portland VA Medical Center, Portland (Dr Tu); and Department of Public Health &amp; Preventive Medicine, Oregon Health &amp; Science University, Portland (Dr Choi).</aff>
+      </contrib-group>
+      <pub-date pub-type="ppub">
+        <month>9</month>
+        <year>2013</year>
+      </pub-date>
+      <volume>111</volume>
+      <fpage>70</fpage>
+      <lpage>92</lpage>
+      <permissions>
+        <copyright-statement>&#xA9;American Ophthalmological Society 2013</copyright-statement>
+        <copyright-year>2013</copyright-year>
+      </permissions>
+      <abstract>
+        <sec>
+          <title>Purpose:</title>
+          <p>To evaluate three measures related to electronic health record (EHR) implementation: clinical volume, time requirements, and nature of clinical documentation. Comparison is made to baseline paper documentation.</p>
+        </sec>
+        <sec>
+          <title>Methods:</title>
+          <p>An academic ophthalmology department implemented an EHR in 2006. A study population was defined of faculty providers who worked the 5 months before and after implementation. Clinical volumes, as well as time length for each patient encounter, were collected from the EHR reporting system. To directly compare time requirements, two faculty providers who utilized both paper and EHR systems completed time-motion logs to record the number of patients, clinic time, and nonclinic time to complete documentation. Faculty providers and databases were queried to identify patient records containing both paper and EHR notes, from which three cases were identified to illustrate representative documentation differences.</p>
+        </sec>
+        <sec>
+          <title>Results:</title>
+          <p>Twenty-three faculty providers completed 120,490 clinical encounters during a 3-year study period. Compared to baseline clinical volume from 3 months pre-implementation, the post-implementation volume was 88% in quarter 1, 93% in year 1, 97% in year 2, and 97% in year 3. Among all encounters, 75% were completed within 1.7 days after beginning documentation. The mean total time per patient was 6.8 minutes longer with EHR than paper (<italic>P</italic>&lt;.01). EHR documentation involved greater reliance on textual interpretation of clinical findings, whereas paper notes used more graphical representations, and EHR notes were longer and included automatically generated text.</p>
+        </sec>
+        <sec>
+          <title>Conclusion:</title>
+          <p>This EHR implementation was associated with increased documentation time, little or no increase in clinical volume, and changes in the nature of ophthalmic documentation.</p>
+        </sec>
+      </abstract>
+    </article-meta>
+  </front>
+</article>
+</pmc-articleset>

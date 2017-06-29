@@ -1,0 +1,9 @@
+language: nix
+
+install: cd RepeatAutomator/; travis_wait nix-shell
+
+cache:
+  directories:
+    - /tmp/nltk_data/
+
+script: nix-shell --run "bash test.sh"
